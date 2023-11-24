@@ -1,8 +1,10 @@
 import { ContainerBlock, ContainerText } from "../components/ContainerBlock"
 import { Counter } from "../components/Counter"
 import { DateDifference } from "../components/DateDifference"
+import { Schedule } from "../widgets/Schedule"
 import { TasksWidget } from "../widgets/TasksWidget"
 import { TodayWidget } from "../widgets/TodayWidget"
+import TradingViewWidget from "../widgets/TradingViewWidget"
 import { WeatherWidget } from "../widgets/WeatherWidget"
 
 
@@ -43,6 +45,22 @@ export const Home = () => {
                 <WeatherWidget />
             </ContainerBlock>
             {/* </div> */}
+
+            <ContainerBlock>
+                <ContainerText>
+                    Schedule
+                </ContainerText>
+                <Schedule />
+            </ContainerBlock>
+
+
+            <ContainerBlock>
+                <ContainerText>
+                    Stock Updates
+                </ContainerText>
+                <TradingViewWidget />
+            </ContainerBlock>
+
         </div>
     )
 }
