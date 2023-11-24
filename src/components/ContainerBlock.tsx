@@ -8,7 +8,7 @@ export const ContainerBlock = (props: any) => {
 
 export const ContainerText = (props: any) => {
     return (
-        <div className="text-3xl font-bold text-center my-2">
+        <div className="text-3xl font-bold text-center my-2 mt-5">
             {props.children}
         </div>
     )
