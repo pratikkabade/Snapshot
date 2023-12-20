@@ -35,7 +35,7 @@ export function TasksWidget() {
         setTask(finalyVal)
 
         setLoading(false)
-        console.log('done');
+        console.log('Task data fetched...');
 
     }
 
