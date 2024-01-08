@@ -1,6 +1,6 @@
 import { Route } from "react-router"
 import { BrowserRouter, Routes } from "react-router-dom"
-import { ProjectNavbar } from "../components/ProjectNavbar"
+import { ProjectNavbar } from "../components/layout/Navbar"
 import { Home } from "../pages/Home"
 
 export const Route_Items = [

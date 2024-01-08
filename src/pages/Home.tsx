@@ -1,6 +1,6 @@
 import { ContainerBlock, ContainerText } from "../components/ContainerBlock"
 import { Counter } from "../components/Counter"
-import { DateDifference } from "../components/DateDifference"
+import { DateDifference } from "../widgets/DateDifference"
 import { Schedule } from "../widgets/Schedule"
 import { TasksWidget } from "../widgets/TasksWidget"
 import { TodayWidget } from "../widgets/TodayWidget"

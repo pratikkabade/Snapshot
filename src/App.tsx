@@ -1,6 +1,6 @@
 import './style/App.css';
 import './style/index.css';
-import { ProjectRoutes } from './routes/ProjectRoutes';
+import { ProjectRoutes } from './routes/Routes';
 
 function App() {
   return (
