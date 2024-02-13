@@ -1,6 +1,6 @@
 import { addDoc, Timestamp } from 'firebase/firestore'
 import { tasksCollectionRef } from '../../config/Firebase'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export const AddTask = ({ open, onClose }: any) => {
     const [title, setTitle] = useState('')
@@ -21,27 +21,56 @@ export const AddTask = ({ open, onClose }: any) => {
         }
     }
 
+    // focus on the title input field when the form is opened
+    useEffect(() => {
+        setTimeout(() => {
+            const inputElement = document.querySelector('.taskinputs input[type="text"]') as HTMLInputElement;
+            inputElement?.focus();
+        }, 100);
+    }, [])
+
+    // press enter to submit the form
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault()
+            handleSubmit(e)
+        }
+    })
+
+    // press esc to close the form
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            e.preventDefault()
+            onClose()
+        }
+    })
+
+
+
+
     return (
-        <div className='fade-in bg-sky-100 p-2 rounded-lg' style={{ display: open ? 'flex' : 'none' }}>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type='text'
-                    className="flex flex-col m-2 p-2 rounded-xl bg-blue-200 w-full"
-                    placeholder='Title'
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                />
-                <input
-                    type='text'
-                    className="flex flex-col m-2 p-2 rounded-xl bg-blue-200 w-full"
-                    placeholder='Description'
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                />
+        <div className='fade-in p-2 rounded-lg' style={{ display: open ? 'flex' : 'none' }}>
+            <form onSubmit={handleSubmit} className='taskinputs flex flex-row justify-center align-middle'>
+                <div className='flex flex-col'>
+                    <input
+                        type='text'
+                        className="w-full rounded-lg pl-2 border-none focus:border-none focus:font-extrabold text-lg font-bold"
+                        placeholder='Title'
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                    />
+                    <input
+                        type='text'
+                        className="w-full rounded-lg pl-2 border-none focus:border-none focus:font-medium text-sm"
+                        placeholder='Description'
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
+                    />
+                </div>
                 <button
                     type='submit'
-                    className="text-white bg-emerald-700 hover:bg-emerald-800 focus:ring-4 focus:ring-emerald-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-emerald-600 dark:hover:bg-emerald-700 focus:outline-none dark:focus:ring-emerald-800">
-                    Add +
+                    className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-3xl text-sm px-1.5 me-2 dark:bg-green-600 dark:hover:bg-green-700 focus:outline-none dark:focus:ring-green-800 block my-1">
+                    <i className='fas fa-plus text-lg'></i>
                 </button>
             </form>
         </div>

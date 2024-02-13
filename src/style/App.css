@@ -45,3 +45,12 @@ div.scroll {
     overflow-x: hidden;
     overflow-y: auto;
 }
+
+.taskinputs input:focus {
+    outline: none !important;
+    background:
+        linear-gradient(#4c4c4c, #c6c6c6) center bottom 0px /calc(100% - 1px) 1px no-repeat;
+    background-color: #fcfcfc;
+    border: none;
+    transition: 0s;
+}
