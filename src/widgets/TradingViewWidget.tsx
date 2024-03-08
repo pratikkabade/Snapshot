@@ -1,43 +1,39 @@
-// TradingViewWidget.jsx
-import React, { useEffect, useRef, memo } from 'react';
+import { useEffect } from 'react';
 
-function TradingViewWidget() {
-  const container = useRef<HTMLInputElement>(null);
+const TradingViewWidget = () => {
+  useEffect(() => {
+    // Create a script element
+    const script = document.createElement('script');
+    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js";
+    script.async = true;
+    script.type = 'text/javascript';
+    script.innerHTML = JSON.stringify({
+      "symbol": "COINBASE:BTCUSD",
+      "width": 350,
+      "height": 220,
+      "locale": "en",
+      "dateRange": "1M",
+      "colorTheme": "light",
+      "isTransparent": false,
+      "autosize": false,
+      "largeChartUrl": ""
+    });
 
-  useEffect(
-    () => {
-      const script = document.createElement("script");
-      script.src = "https://s3.tradingview.com/external-embedding/embed-widget-stock-heatmap.js";
-      script.type = "text/javascript";
-      script.async = true;
-      script.innerHTML = `
-        {
-          "exchanges": [],
-          "dataSource": "SPX500",
-          "grouping": "sector",
-          "blockSize": "market_cap_basic",
-          "blockColor": "change",
-          "locale": "in",
-          "symbolUrl": "",
-          "colorTheme": "light",
-          "hasTopBar": false,
-          "isDataSetEnabled": false,
-          "isZoomEnabled": true,
-          "hasSymbolTooltip": true,
-          "width": "100%",
-          "height": "100%"
-        }`;
-      container.current.appendChild(script)
-    },
-    []
-  );
+    // Append script to here id
+    document.getElementById('here').appendChild(script);
+
+
+    // Cleanup function to remove script from the body on component unmount
+    return () => {
+      document.getElementById('here').removeChild(script);
+    };
+  }, []);
 
   return (
-    <div className="tradingview-widget-container" ref={container}>
-      <div className="tradingview-widget-container__widget"></div>
-      <div className="tradingview-widget-copyright"><a href="https://in.tradingview.com/" rel="noopener nofollow" target="_blank"><span className="blue-text">Track all markets on TradingView</span></a></div>
+    <div className='p-10 justify-center content-center content-center'>
+      <div id="here" className='mx-auto'></div>
     </div>
   );
-}
+};
 
-export default memo(TradingViewWidget);
+export default TradingViewWidget;
