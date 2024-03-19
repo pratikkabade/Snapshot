@@ -1,11 +1,13 @@
 import { Counter } from "../components/Counter"
 import { ContainerBlock, ContainerText } from "../components/core/ContainerBlock"
 import { DateDifference } from "../widgets/DateDifference"
+import { GoogleSignIn } from "../widgets/GoogleSignIn"
 import { Schedule } from "../widgets/Schedule"
 import { TasksWidget } from "../widgets/TasksWidget"
 import { TodayWidget } from "../widgets/TodayWidget"
 import TradingViewWidget from "../widgets/TradingViewWidget"
 import { WeatherWidget } from "../widgets/WeatherWidget"
+import TaskManager from "../widgets/tasks/TaskManager"
 
 
 export const Home = () => {
@@ -15,6 +17,23 @@ export const Home = () => {
             <ContainerBlock>
                 <TodayWidget />
             </ContainerBlock>
+
+            <ContainerBlock>
+                <ContainerText>
+                    Sign In
+                </ContainerText>
+                <GoogleSignIn />
+            </ContainerBlock>
+
+            <ContainerBlock>
+                <ContainerText>
+                    Tasks
+                </ContainerText>
+                <div className="w-64 h-full">
+                    <TaskManager />
+                </div>
+            </ContainerBlock>
+
 
             <ContainerBlock>
                 <ContainerText>
@@ -41,9 +60,9 @@ export const Home = () => {
 
 
             {/* <div className="lg:w-2/5 w-full h-96 m-5 p-5 bg-slate-50 dark:bg-slate-900 rounded-3xl flex flex-row justify-center"> */}
-            <ContainerBlock>
+            {/* <ContainerBlock>
                 <WeatherWidget />
-            </ContainerBlock>
+            </ContainerBlock> */}
             {/* </div> */}
 
             <ContainerBlock>
