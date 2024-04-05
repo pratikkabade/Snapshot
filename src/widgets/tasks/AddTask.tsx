@@ -1,10 +1,13 @@
 import { addDoc, Timestamp } from 'firebase/firestore'
-import { tasksCollectionRef } from '../../config/Firebase'
+import { auth, tasksCollectionRef } from '../../config/Firebase'
 import { useEffect, useState } from 'react'
+import { useAuthState } from 'react-firebase-hooks/auth'
 
 export const AddTask = ({ open, onClose }: any) => {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
+
+    const [user] = useAuthState(auth);
 
     const handleSubmit = async (e: any) => {
         e.preventDefault()
@@ -13,7 +16,8 @@ export const AddTask = ({ open, onClose }: any) => {
                 title: title,
                 description: description,
                 completed: false,
-                created: Timestamp.now()
+                created: Timestamp.now(),
+                email: user.email
             })
             onClose()
         } catch (err) {

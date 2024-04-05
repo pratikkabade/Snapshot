@@ -9,7 +9,7 @@ export const SignOut = () => {
 
     return (
         <div>
-            <button className="bg-red-100 rounded-xl hover:bg-red-200 py-1 px-4 text-red-800 hover:text-red-600 dark:text-red-800 dark:hover:text-red-600 font-bold" onClick={signOutWithGoogle}>
+            <button className="bg-red-200 dark:bg-red-700 rounded-full  py-1 px-4 hover:brightness-105 text-red-800 dark:text-red-200 font-bold" onClick={signOutWithGoogle}>
                 Sign Out
             </button>
         </div>

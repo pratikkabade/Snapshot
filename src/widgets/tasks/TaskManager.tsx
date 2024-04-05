@@ -1,69 +1,82 @@
 import { useState, useEffect } from 'react'
 import { query, orderBy, onSnapshot } from "firebase/firestore"
-import { tasksCollectionRef } from '../../config/Firebase'
+import { auth, tasksCollectionRef } from '../../config/Firebase'
 import { Task } from './Task'
 import { AddTask } from './AddTask'
+import { useAuthState } from 'react-firebase-hooks/auth'
 
 function TaskManager() {
     const [view, setView] = useState(false)
     const [tasks, setTasks] = useState([])
 
-    /* function to get all tasks from firestore in realtime */
+    const [user] = useAuthState(auth);
+
+    // function to get all tasks from firestore in realtime
     useEffect(() => {
         const q = query(tasksCollectionRef, orderBy('created', 'desc'))
         onSnapshot(q, (querySnapshot) => {
-            setTasks(querySnapshot.docs
-                .map(doc => ({
-                    id: doc.id,
-                    data: doc.data()
-                })))
+            const taskList: { id: string, data: any }[] = [] // Explicitly define the type of taskList
+            querySnapshot.forEach((doc) => {
+                doc.data().email === user.email &&
+                    taskList.push({
+                        id: doc.id,
+                        data: doc.data()
+                    })
+            })
+            setTasks(taskList)
         })
-    }, [])
+    }, [user])
+
+    // total number of tasks
+    const totalTasks = tasks.length
+    // total uncompleted tasks
+    const uncompletedTasks = tasks.filter((task) => !task.data.completed).length
 
     return (
         <div className='w-64 p-2 rounded-lg'>
-            <header>Task Manager</header>
-            <div>
-                {view ?
-                    <>
-                        <AddTask onClose={() => setView(false)} open={view} />
-                        {/* <button
-                            onClick={() => setView(false)}
-                            className="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800">
-                            Cancel
-                        </button> */}
-                    </> :
-                    // <button
-                    //     onClick={() => setView(true)}
-                    //     className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                    //     Add task +
-                    // </button>
+            {user ?
+                <div>
 
-                    <div
-                        className="fade-in2 cursor-pointer flex flex-row justify-between items-center content-center px-3 py-1.5 hover:bg-sky-50 rounded-lg"
-                        onClick={() => setView(true)}>
-                        <div
-                            className="hover:text-slate-600 dark:hover:text-slate-500">
-                            <h3 className="text-lg font-bold">Add </h3>
-                            <p className="text-sm">Task</p>
-                        </div>
+                    <h3 className="text-xl font-bold">({uncompletedTasks}/{totalTasks})</h3>
+
+                    {
+                        view ?
+                            <>
+                                < AddTask onClose={() => setView(false)} open={view} />
+                            </> :
+                            <div
+                                className="fade-in2 cursor-pointer flex flex-row justify-start items-center content-center px-3 py-1.5 hover:bg-sky-50 rounded-lg"
+                                onClick={() => setView(true)}>
+                                <input
+                                    type='checkbox'
+                                    className="my-1 h-5 opacity-0"
+                                />
+                                <div
+                                    className="ml-3 text-start">
+                                    <h3 className="text-lg font-bold">Add </h3>
+                                    <p className="text-sm">Task</p>
+                                </div>
+                            </div>
+                    }
+                    <div className='rounded-lg'>
+                        {tasks.map((task) => (
+                            <Task
+                                id={task.id}
+                                key={task.id}
+                                completed={task.data.completed}
+                                title={task.data.title}
+                                description={task.data.description}
+                            />
+                        ))}
                     </div>
-
-
-                }
-                <div className='bg-white p-2 rounded-lg'>
-                    {tasks.map((task) => (
-                        <Task
-                            id={task.id}
-                            key={task.id}
-                            completed={task.data.completed}
-                            title={task.data.title}
-                            description={task.data.description}
-                        />
-                    ))}
                 </div>
-            </div>
-        </div>
+                :
+                <>
+                    Please Sign in
+                </>
+            }
+
+        </div >
     )
 }
 
