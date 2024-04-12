@@ -2,15 +2,29 @@ import { doc, updateDoc, deleteDoc } from "firebase/firestore";
 import { db } from "../../config/Firebase";
 
 export const Task = ({ id, title, description, completed }: any) => {
-    const handleCheckedChange = async () => {
-        const taskDocRef = doc(db, 'tasks', id)
-        try {
-            await updateDoc(taskDocRef, {
-                completed: !completed
-            })
-        } catch (err) {
-            alert(err)
-        }
+    const handleCheckedChange1 = async () => {
+        setTimeout(async () => {
+            const taskDocRef = doc(db, 'tasks', id)
+            try {
+                await updateDoc(taskDocRef, {
+                    completed: !completed
+                })
+            } catch (err) {
+                alert(err)
+            }
+        }, 500)
+    }
+    const handleCheckedChange2 = async () => {
+        setTimeout(async () => {
+            const taskDocRef = doc(db, 'tasks', id)
+            try {
+                await updateDoc(taskDocRef, {
+                    completed: !completed
+                })
+            } catch (err) {
+                alert(err)
+            }
+        }, 2000)
     }
     const handleDelete = async () => {
         const taskDocRef = doc(db, 'tasks', id)
@@ -28,13 +42,24 @@ export const Task = ({ id, title, description, completed }: any) => {
             <label
                 htmlFor={`checkbox-${id}`}
                 className="flex flex-row justify-start items-center w-full">
-                <input
-                    type='checkbox'
-                    id={`checkbox-${id}`}
-                    checked={completed}
-                    onChange={handleCheckedChange}
-                    className="my-1 h-5"
-                />
+                {
+                    completed ? (
+                        <input
+                            type='checkbox'
+                            id={`checkbox-${id}`}
+                            checked={completed}
+                            onChange={handleCheckedChange1}
+                            className="my-1  peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-7 before:w-7 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-blue-500 checked:bg-blue-500 checked:before:bg-blue-500 hover:before:opacity-20" />
+                    ) : (
+                        <input
+                            type='checkbox'
+                            id={`checkbox-${id}`}
+                            // checked={completed}
+                            onChange={handleCheckedChange2}
+                            className="my-1  peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-7 before:w-7 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-blue-500 checked:bg-blue-500 checked:before:bg-blue-500 hover:before:opacity-20" />
+
+                    )
+                }
                 <div
                     className="ml-3">
                     <h3 className="text-lg font-bold">{title}</h3>

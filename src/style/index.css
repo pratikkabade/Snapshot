@@ -40,3 +40,12 @@
         content: " Top";
     }
 }
+
+.bg-opacity-50{
+    backdrop-filter: blur(3px) !important;
+}
+
+.scrl{
+    overflow-y: scroll;
+    scrollbar-color: rgb(59 130 246) rgb(59 130 246);
+}

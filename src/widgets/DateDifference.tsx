@@ -1,3 +1,4 @@
+import { Button, Modal } from "flowbite-react";
 import { useState } from "react"
 
 export const DateDifference = () => {
@@ -5,6 +6,8 @@ export const DateDifference = () => {
     //STATEs
     const [start, setStart] = useState('')
     const [end, setEnd] = useState('')
+
+    const [openModal, setOpenModal] = useState(false);
 
     // CALCULATE DIFFERENCE
     const date1 = new Date(start);
@@ -15,6 +18,13 @@ export const DateDifference = () => {
 
 
     return (
+
+        <>
+        
+      <Button onClick={() => setOpenModal(true)}>Check Duration</Button>
+      <Modal className="fade-in" dismissible show={openModal} onClose={() => setOpenModal(false)}>
+        <Modal.Header>Check Days</Modal.Header>
+        <Modal.Body>        
         <div className="flex flex-col mt-6 justify-center ">
             <div className="flex flex-row flex-wrap justify-center mb-2">
                 <div className="flex flex-col items-center">
@@ -53,5 +63,8 @@ export const DateDifference = () => {
                         days</p>
             }
         </div>
+        </Modal.Body>
+      </Modal>
+      </>
     )
 }

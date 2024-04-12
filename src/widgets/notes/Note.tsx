@@ -1,4 +1,4 @@
-import { doc, updateDoc, deleteDoc } from "firebase/firestore";
+import { doc, deleteDoc } from "firebase/firestore";
 import { db } from "../../config/Firebase";
 
 export const Note = ({ id, title }: any) => {
@@ -13,10 +13,10 @@ export const Note = ({ id, title }: any) => {
     }
 
     return (
-        <div className="m-1 fade-in2 flex flex-row justify-between items-center align-middle content-center px-3 py-1.5 hover:bg-sky-50 rounded-lg group border-2 border-slate-500 ">
+        <div className="m-1 fade-in2 flex flex-row justify-between items-center align-middle content-center px-3 py-1.5 hover:bg-amber-50 rounded-lg group border-2 border-slate-500 ">
             <div
                 className="ml-3">
-                <h3 className="text-lg font-bold">{title}</h3>
+                <h3 className="text-lg font-bold cursor-default">{title}</h3>
             </div>
             <button
                 type="button"

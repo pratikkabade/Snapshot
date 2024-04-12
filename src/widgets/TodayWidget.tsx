@@ -1,3 +1,5 @@
+import { WeatherWidget } from "./WeatherWidget";
+
 export const TodayWidget = () => {
     const myDate = new Date()
 
@@ -43,11 +45,12 @@ export const TodayWidget = () => {
     }
 
     return (
-        <div className="p-10">
+        <div className="p-10 cursor-default">
             <h1 className="text-xl mb-2">Good {greet},</h1>
             <span className="text-3xl font-bold mr-2">{day},</span>
             <span className="text-3xl mr-3">{date}</span>
             <span className="text-3xl">{month}</span>
+            <WeatherWidget />
         </div>
     )
 }
