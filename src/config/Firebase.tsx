@@ -19,3 +19,4 @@ export const provider = new GoogleAuthProvider();
 
 export const db = getFirestore(app)
 export const tasksCollectionRef = collection(db, "tasks")
+export const notesCollectionRef = collection(db, "notes")

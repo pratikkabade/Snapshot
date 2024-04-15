@@ -7,6 +7,7 @@ import { TasksWidget } from "../widgets/TasksWidget"
 import { TodayWidget } from "../widgets/TodayWidget"
 import TradingViewWidget from "../widgets/TradingViewWidget"
 import { WeatherWidget } from "../widgets/WeatherWidget"
+import NoteManager from "../widgets/notes/NoteManager"
 import TaskManager from "../widgets/tasks/TaskManager"
 
 
@@ -34,6 +35,14 @@ export const Home = () => {
                 </div>
             </ContainerBlock>
 
+            <ContainerBlock>
+                <ContainerText>
+                    Notes
+                </ContainerText>
+                <div className="w-64 h-full">
+                    <NoteManager />
+                </div>
+            </ContainerBlock>
 
             <ContainerBlock>
                 <ContainerText>
@@ -59,11 +68,13 @@ export const Home = () => {
             </ContainerBlock>
 
 
-            {/* <div className="lg:w-2/5 w-full h-96 m-5 p-5 bg-slate-50 dark:bg-slate-900 rounded-3xl flex flex-row justify-center"> */}
-            {/* <ContainerBlock>
+            <ContainerBlock>
+                <ContainerText>
+                    Weather
+                </ContainerText>
                 <WeatherWidget />
-            </ContainerBlock> */}
-            {/* </div> */}
+            </ContainerBlock>
+
 
             <ContainerBlock>
                 <ContainerText>
