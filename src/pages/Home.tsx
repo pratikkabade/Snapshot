@@ -1,5 +1,6 @@
 import { Counter } from "../components/Counter"
 import { ContainerBlock, ContainerText } from "../components/core/ContainerBlock"
+import { ProjectNavbar } from "../components/layout/Navbar"
 import { DateDifference } from "../widgets/DateDifference"
 import { GoogleSignIn } from "../widgets/GoogleSignIn"
 import { Schedule } from "../widgets/Schedule"
@@ -14,7 +15,7 @@ import TaskManager from "../widgets/tasks/TaskManager"
 export const Home = () => {
     return (
         <div className="flex flex-row flex-wrap justify-center mx-auto w-4/5">
-
+            <ProjectNavbar />
             <ContainerBlock>
                 <TodayWidget />
             </ContainerBlock>

@@ -1,12 +1,12 @@
 import './style/App.css';
 import './style/index.css';
 import './style/Animations.css';
-import { NewHome } from './pages/NewHome';
+import { ProjectRoutes } from './routes/Routes';
 
 function App() {
   return (
     <>
-      <NewHome/>
+      <ProjectRoutes/>
     </>
   );
 }

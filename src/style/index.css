@@ -47,5 +47,5 @@
 
 .scrl{
     overflow-y: scroll;
-    scrollbar-color: rgb(59 130 246) rgb(59 130 246);
+    scrollbar-color: rgba(59, 131, 246, 0) rgba(59, 131, 246, 0);
 }

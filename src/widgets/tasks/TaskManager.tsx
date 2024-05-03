@@ -34,7 +34,7 @@ function TaskManager() {
     const uncompletedTasks = tasks.filter((task) => !task.data.completed).length
 
     return (
-        <div className='w-64 p-2 scrl h-80 rounded-lg'>
+        <div className='p-2 scrl h-80 rounded-lg'>
             <>
                 <h3 className="text-2xl text-blue-800 font-semibold text-center mt-2 mb-5">
                     <i className='fa-solid fa-tasks mr-3'></i>

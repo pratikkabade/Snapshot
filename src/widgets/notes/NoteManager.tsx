@@ -31,7 +31,7 @@ function NoteManager() {
     const totalNotes = notes.length
 
     return (
-        <div className='w-full p-2 rounded-lg'>
+        <div className='p-2 rounded-lg'>
             <>
                 <h3 className="text-2xl text-amber-700 font-semibold text-center mt-2 mb-5">
                     <i className='fa-solid fa-sticky-note mr-3'></i>
