@@ -1,3 +1,4 @@
+import { TimeExchange } from "../components/TimeExchange"
 import { GoogleSignIn } from "../widgets/GoogleSignIn"
 import { TodayWidget } from "../widgets/TodayWidget"
 import NoteManager from "../widgets/notes/NoteManager"
@@ -18,6 +19,12 @@ export const NewHome = () => {
                     <div className="border-2 border-slate-400 rounded-xl lg:w-96 md:w-80 sm:w-72 max-sm:w-3/4 m-2 shadow-md">
                         <TaskManager />
                     </div>
+                </div>
+            </div>
+
+            <div className="flex flex-row justify-center my-10">
+                <div className="border-2 border-slate-400 rounded-3xl cursor-pointer hover:bg-slate-50 hover:shadow-md">
+                    <TimeExchange />
                 </div>
             </div>
 
