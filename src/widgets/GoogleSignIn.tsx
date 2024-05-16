@@ -16,7 +16,7 @@ export const GoogleSignIn = () => {
                         <Popover
                             aria-labelledby="profile-popover"
                             content={
-                                <div className="bg-gray-50 flex flex-col justify-center items-center">
+                                <div className="bg-gray-50 flex flex-col justify-center items-center p-3">
                                     <h1 className="text-3xl font-semibold mb-3">
                                         {user.displayName}
                                     </h1>

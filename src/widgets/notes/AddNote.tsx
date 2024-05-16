@@ -30,13 +30,13 @@ export const AddNote = ({ open, onClose }: any) => {
         }, 100);
     }, [])
 
-    // press enter to submit the form
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
-            e.preventDefault()
-            handleSubmit(e)
-        }
-    })
+    // // press enter to submit the form
+    // document.addEventListener('keydown', (e) => {
+    //     if (e.key === 'Enter') {
+    //         e.preventDefault()
+    //         handleSubmit(e)
+    //     }
+    // })
 
     // press esc to close the form
     document.addEventListener('keydown', (e) => {

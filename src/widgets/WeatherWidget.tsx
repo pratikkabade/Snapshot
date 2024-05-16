@@ -19,7 +19,6 @@ export const WeatherWidget = () => {
         setH(H);
     }, []);
 
-
     // usestate to store the coordinates
     const [LAT, setLat] = useState(null);
     const [LONG, setLong] = useState(null);
@@ -30,7 +29,7 @@ export const WeatherWidget = () => {
         setLat(latitude);
         setLong(longitude);
     });
-
+console.log('https://api.open-meteo.com/v1/forecast?latitude=' + LAT + '&longitude=' + LONG + '&hourly=temperature_2m,relative_humidity_2m,rain,wind_speed_10m&timezone=Asia%2FBangkok&forecast_days=1')
 
     const fetchData = async () => {
         try {

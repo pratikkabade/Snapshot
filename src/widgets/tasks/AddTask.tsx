@@ -33,13 +33,13 @@ export const AddTask = ({ open, onClose }: any) => {
         }, 100);
     }, [])
 
-    // press enter to submit the form
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
-            e.preventDefault()
-            handleSubmit(e)
-        }
-    })
+    // // press enter to submit the form
+    // document.addEventListener('keydown', (e) => {
+    //     if (e.key === 'Enter') {
+    //         e.preventDefault()
+    //         handleSubmit(e)
+    //     }
+    // })
 
     // press esc to close the form
     document.addEventListener('keydown', (e) => {
@@ -53,7 +53,7 @@ export const AddTask = ({ open, onClose }: any) => {
 
 
     return (
-        <div className='fade-in p-2 rounded-lg' style={{ display: open ? 'flex' : 'none' }}>
+        <div className='fade-in p-2 rounded-lg shadow-md' style={{ display: open ? 'flex' : 'none' }}>
             <form onSubmit={handleSubmit} className='taskinputs flex flex-row justify-center align-middle'>
                 <div className='flex flex-col'>
                     <input

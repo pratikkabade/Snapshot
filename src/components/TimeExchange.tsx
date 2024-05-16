@@ -28,7 +28,7 @@ export const TimeExchange = () => {
 
     return (
         <div>
-            <div onClick={() => setOpenModal(true)} className="px-10 py-7 flex flex-col justify-end items-end">
+            <div onClick={() => setOpenModal(true)} className="flex flex-col justify-end items-end">
                 <p className="text-5xl font-bold">{LondonHours}:{LondonMinutes}</p>
                 <p className="">London, UK</p>
             </div>
