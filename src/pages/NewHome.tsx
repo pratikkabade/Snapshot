@@ -6,7 +6,7 @@ import TaskManager from "../widgets/tasks/TaskManager"
 
 export const NewHome = () => {
     return (
-        <section className="flex flex-col bg-slate-50">
+        <section className="flex flex-col bg-sky-50">
             <div className="flex flex-row max-sm:flex-col justify-between items-center">
                 <GoogleSignIn />
                 <TodayWidget />

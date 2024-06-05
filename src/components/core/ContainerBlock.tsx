@@ -1,6 +1,6 @@
 export const ContainerBlock = (props: any) => {
     return (
-        <div className="md:w-fit md:h-fit m-5 bg-slate-50 dark:bg-slate-900 rounded-3xl w-full">
+        <div className="md:w-fit md:h-fit m-5 bg-sky-50 dark:bg-slate-900 rounded-3xl w-full">
             {props.children}
         </div>
     )

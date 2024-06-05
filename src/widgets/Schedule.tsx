@@ -87,11 +87,11 @@ export const Schedule = () => {
     return (
         <div>
             <ProjectNavbar />
-            <div className="flex flex-col justify-center items-center">
+            <div className="bg-sky-50 flex flex-col justify-center items-center">
                 <div className="flex lg:w-3/6 md:w-4/6 sm:w-5/6 flex-col">
                     <div className="flex flex-col py-3">
                         <input type="text" onChange={event1} placeholder='Event Name'
-                            className="flex flex-col p-3 rounded-xl text-xl w-full bg-sky-100" />
+                            className="flex flex-col hover:cursor-pointer hover:shadow-sm p-3 rounded-xl text-xl w-full border-2 border-sky-300 bg-sky-100" />
                     </div>
 
                     <div className="flex flex-row max-md:flex-col flex-wrap justify-between py-3">
@@ -99,10 +99,10 @@ export const Schedule = () => {
                             <h3 className=" text-xl mx-5">Starts from</h3>
                             <div className="smaller flex flex-row items-start justify-start flex-wrap">
                                 <input type="date" onChange={event2}
-                                    className="flex flex-col m-2 p-2 rounded-xl bg-emerald-200" />
+                                    className="flex flex-col hover:cursor-pointer hover:shadow-sm m-2 p-2 rounded-xl border-2 border-emerald-300 bg-emerald-200" />
 
                                 <input type="time" onChange={event2t}
-                                    className="flex flex-col m-2 p-2 rounded-xl bg-emerald-200" />
+                                    className="flex flex-col hover:cursor-pointer hover:shadow-sm m-2 p-2 rounded-xl border-2 border-emerald-300 bg-emerald-200" />
                             </div>
                         </div>
 
@@ -110,10 +110,10 @@ export const Schedule = () => {
                             <h3 className="text-xl mx-5">Ends on</h3>
                             <div className="smaller flex flex-row items-end justify-end flex-wrap">
                                 <input type="date" onChange={event3}
-                                    className="flex flex-col m-2 p-2 rounded-xl bg-red-200" />
+                                    className="flex flex-col hover:cursor-pointer hover:shadow-sm m-2 p-2 rounded-xl border-2 border-red-300 bg-red-200" />
 
                                 <input type="time" onChange={event3t}
-                                    className="flex flex-col m-2 p-2 rounded-xl bg-red-200" />
+                                    className="flex flex-col hover:cursor-pointer hover:shadow-sm m-2 p-2 rounded-xl border-2 border-red-300 bg-red-200" />
                             </div>
                         </div>
                     </div>
@@ -121,9 +121,9 @@ export const Schedule = () => {
 
                     <div className="flex flex-row flex-wrap justify-between">
                         <input type="text" onChange={event4} placeholder='Add Location'
-                            className="flex flex-col p-3 w-5/12 max-md:w-full max-md:rounded-b-none rounded-xl bg-slate-100 h-fit" />
+                            className="flex flex-col hover:cursor-pointer hover:shadow-sm p-3 w-5/12 max-md:w-full max-md:rounded-b-none rounded-xl border-2 border-slate-300 bg-slate-100 h-fit" />
                         <textarea onChange={event5} placeholder='Details'
-                            className="flex flex-col p-3 w-5/12 max-md:w-full max-md:rounded-t-none rounded-xl bg-yellow-100" />
+                            className="flex flex-col hover:cursor-pointer hover:shadow-sm p-3 w-5/12 max-md:w-full max-md:rounded-t-none rounded-xl border-2 border-yellow-300 bg-yellow-100" />
                     </div>
 
 
@@ -137,15 +137,16 @@ export const Schedule = () => {
                                 </div>
 
                                 <div className="flex flex-row flex-wrap justify-center items-center" id="Recurring">
-                                    <div className="flex flex-col m-2 p-2 rounded-xl bg-sky-100">
+                                    <div className="flex flex-col m-2 p-2 rounded-xl border-2 border-sky-300 bg-sky-100">
                                         <h3>Recurring ends on</h3>
                                         <div className="smaller ">
                                             <div className="m-2">
                                                 <DateDifference />
-                                            </div>                                            <input type="date" onChange={event7}
-                                                className="flex flex-col m-2 p-2 rounded-xl bg-blue-200" />
+                                            </div>
+                                            <input type="date" onChange={event7}
+                                                className="flex flex-col hover:cursor-pointer hover:shadow-sm m-2 p-2 rounded-xl border-2 border-blue-300 bg-blue-200" />
                                             <input type="time" onChange={event7t}
-                                                className="flex flex-col m-2 p-2 rounded-xl bg-blue-200" />
+                                                className="flex flex-col hover:cursor-pointer hover:shadow-sm m-2 p-2 rounded-xl border-2 border-blue-300 bg-blue-200" />
                                         </div>
                                     </div>
                                 </div>
