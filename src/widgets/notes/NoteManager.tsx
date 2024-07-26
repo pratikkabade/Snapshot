@@ -9,7 +9,7 @@ const NoNote = () => {
     const [user] = useAuthState(auth);
     return (
         <div>
-            <div className='p-2 rounded-lg'>
+            <div className='p-2 scrl h-80 rounded-lg'>
                 <h3 className="text-2xl text-amber-700 font-semibold text-center mt-2 mb-5">
                     <i className='fa-solid fa-sticky-note mr-3'></i>
                     Notes
@@ -63,7 +63,7 @@ function NoteManager() {
             {
                 user === null || timeOut ?
                     <NoNote /> :
-                    <div className='p-2 rounded-lg'>
+                    <div className='p-2 scrl h-80 rounded-lg'>
                         <h3 className="text-2xl text-amber-700 font-semibold text-center mt-2 mb-5">
                             <i className='fa-solid fa-sticky-note mr-3'></i>
                             Notes ({totalNotes})

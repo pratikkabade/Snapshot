@@ -3,6 +3,7 @@ import { IndianTimeValues, LondonTimeValues } from "../constants/LondonTimes"
 import { useState } from "react";
 
 export const TimeExchange = () => {
+    const [local, setLocal] = useState(true);
     const [openModal, setOpenModal] = useState(false);
 
 
@@ -17,6 +18,7 @@ export const TimeExchange = () => {
 
     const LocalTimeText = new Date()
     const LocalHours = LocalTimeText.getHours().toString()
+    const LocalMinutes = LocalTimeText.getMinutes().toString()
 
     // esc to close modal
     window.addEventListener('keydown', (event: any) => {
@@ -28,11 +30,18 @@ export const TimeExchange = () => {
 
     return (
         <div>
-            <div onClick={() => setOpenModal(true)} className="flex flex-col justify-end items-end">
-                <p className="text-5xl font-bold">{LondonHours}:{LondonMinutes}</p>
-                <p className="">London, UK</p>
-            </div>
-
+            {
+                local ?
+                    <div onClick={() => setLocal(false)} className="flex flex-col justify-end items-end">
+                        <p className="text-5xl font-bold">{LocalHours}:{LocalMinutes}</p>
+                        <p className="">Mumbai, India</p>
+                    </div>
+                    :
+                    <div onClick={() => setOpenModal(true)} className="flex flex-col justify-end items-end fade-in2">
+                        <p className="text-5xl font-bold">{LondonHours}:{LondonMinutes}</p>
+                        <p className="">London, UK</p>
+                    </div>
+            }
 
             <Modal dismissible show={openModal} onClose={() => setOpenModal(false)}>
                 <Modal.Header>London Time</Modal.Header>

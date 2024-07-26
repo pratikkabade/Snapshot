@@ -45,7 +45,7 @@ export const TodayWidget = () => {
     }
 
     return (
-        <div className="p-10 cursor-default">
+        <div className="p-10 cursor-default max-sm:text-center">
             <h1 className="text-xl mb-2">Good {greet},</h1>
             <span className="text-3xl font-bold mr-2">{day},</span>
             <span className="text-3xl mr-3">{date}</span>

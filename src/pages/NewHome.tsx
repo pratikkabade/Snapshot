@@ -9,20 +9,19 @@ export const NewHome = () => {
         <section className="flex flex-col bg-sky-50">
             <div className="flex flex-row max-sm:flex-col justify-between items-center">
                 <GoogleSignIn />
-                <TodayWidget />
+                <div className="flex flex-row max-sm:flex-col cursor-default justify-center items-center max-sm:mt-10 !max-sm:text-center">
+                    <TimeExchange />
+                    <TodayWidget />
+                </div>
             </div>
             <div className="flex flex-col justify-center items-center">
                 <div className="flex flex-row justify-between max-md:flex-col flex-wrap items-center w-11/12">
                     <div className="flex flex-col max-md:w-full w-3/6 justify-center items-center">
-                        <div className="bg-white rounded-3xl w-48 cursor-pointer shadow-md hover:shadow-lg p-5">
-                            <TimeExchange />
-                        </div>
-
                         <div className="bg-white rounded-xl max-md:w-full w-full h-fit m-2 shadow-md">
                             <NoteManager />
                         </div>
                     </div>
-                    <div className="bg-white rounded-xl max-md:w-full w-2/6 m-2 shadow-md">
+                    <div className="bg-white rounded-xl max-md:w-full h-fit w-2/6 m-2 shadow-md">
                         <TaskManager />
                     </div>
                 </div>
