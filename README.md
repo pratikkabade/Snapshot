@@ -1,9 +1,28 @@
-# At A Glance
+# Quick-Snapshot
 
-At A Glance app built with APIs
+## Description
+- Quick-Snapshot is an application that allows users to view and add notes and tasks, displays time, weather, and date, and includes a scheduler for creating Google Calendar links. 
+- It is built using Firebase for authentication, Google Maps reverse coordinate for location services, and OpenMateo for weather updates.
 
-https://open-meteo.com/en/docs#latitude=18.5929&longitude=73.7428&hourly=temperature_2m,rain&forecast_days=3
+## Features
+- View and add notes
+- View and add tasks
+- Display current time, weather, and date
+- Scheduler for creating Google Calendar links
 
-https://in.tradingview.com/widget/
+## Technologies Used
+- Firebase for authentication
+- Google Maps for reverse coordinate lookup
+- OpenMateo for weather updates
 
-#### [Deployment]()
+## Getting Started
+Users can visit the page and start using the application directly without any setup or configuration.
+
+### Using the Application
+- **Notes**: Navigate to the notes section to view or add new notes.
+- **Tasks**: Navigate to the tasks section to view or add new tasks.
+- **Time, Weather, and Date**: The current time, weather, and date are displayed on the main dashboard.
+- **Scheduler**: Use the scheduler to create and manage events. You can generate Google Calendar links for easy scheduling.
+
+## Conclusion
+Quick-Snapshot is a comprehensive tool for managing notes, tasks, and schedules while keeping you updated with the current time, weather, and date. Its integration with Firebase, Google Maps, and OpenMateo ensures a seamless and efficient user experience.
