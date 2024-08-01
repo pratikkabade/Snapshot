@@ -26,3 +26,7 @@ Users can visit the page and start using the application directly without any se
 
 ## Conclusion
 Quick-Snapshot is a comprehensive tool for managing notes, tasks, and schedules while keeping you updated with the current time, weather, and date. Its integration with Firebase, Google Maps, and OpenMateo ensures a seamless and efficient user experience.
+
+##### `DEPRICATED AS OF AUG-2024`
+
+[![wakatime](https://wakatime.com/badge/user/94eceae7-683a-4d18-a44b-59d4ffd2eb5d/project/4110eb62-4ec2-4525-88c5-540f2dd4c248.svg)](https://wakatime.com/badge/user/94eceae7-683a-4d18-a44b-59d4ffd2eb5d/project/4110eb62-4ec2-4525-88c5-540f2dd4c248)
