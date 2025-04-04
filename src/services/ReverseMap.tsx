@@ -1,45 +1,58 @@
-import { useState } from "react";
-import { GoogleAPIKey } from "../constants/GoogleAPIKey";
+// useReverseGeocode.ts
+import { useEffect, useState } from "react";
 
-export const ReverseMap = () => {
-    const [location, setLocation] = useState(null)
+export const useReverseGeocode = () => {
+    const [location, setLocation] = useState<string | null>(null);
+    const [LAT, setLat] = useState<number | null>(null);
+    const [LONG, setLong] = useState<number | null>(null);
 
-    // get the coordinates from the browser
-    navigator.geolocation.getCurrentPosition((position) => {
-        const { latitude, longitude } = position.coords;
-        setLat(latitude);
-        setLong(longitude);
-    });
+    const key = 'cEn9X8v98jJGu0eVzpTVaflD1lBkO8GwMNS6F7hT';
+    const site = 'https://api.olamaps.io/places/v1/reverse-geocode?latlng=';
 
-    // usestate to store the coordinates
-    const [LAT, setLat] = useState(null);
-    const [LONG, setLong] = useState(null);
+    useEffect(() => {
+        navigator.geolocation.getCurrentPosition((position) => {
+            const { latitude, longitude } = position.coords;
+            setLat(latitude);
+            setLong(longitude);
+        });
+    }, []);
 
-    const fetchName = async () => {
-        try {
-            const response = await fetch('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + LAT + ',' + LONG + '&sensor=true&key=' + GoogleAPIKey);
-            // const response = await fetch('https://geocode.maps.co/reverse?' + LAT + '=&' + LONG + '=&api_key=662e1d36b6295947532052urk85de7e');
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
+    useEffect(() => {
+        const fetchName = async () => {
+            try {
+                const url = `${site}${LAT},${LONG}&api_key=${key}`;
+                const response = await fetch(url);
+                if (!response.ok) throw new Error("Network error");
+
+                const data = await response.json();
+                const locationData = data.results?.[0]?.address_components
+                    .find((component: any) => component.types.includes("locality"))?.short_name;
+                setLocation(locationData || "Unknown");
+            } catch (err) {
+                console.error("Error fetching location:", err);
             }
-            const data = await response.json();
-            console.log(data);
-            const locationData = data.plus_code.compound_code.split(' ')[1].replace(',', ' ');
-            // const locationData = data.address.city;
-            setLocation(locationData);
-        } catch (error) {
-            console.error('Error fetching location data:', error);
+        };
+
+        if (LAT !== null && LONG !== null) {
+            fetchName();
         }
-        console.log('geocoding api call');
-    }
+    }, [LAT, LONG]);
 
-    if (LAT !== null && LONG !== null) {
-        fetchName();
-    }
+    return location;
+};
 
-    return (
-        <div>
-            {location}
-        </div>
-    )
-}
+
+const formatLocation = (location: string): string => {
+    const maxLength = 6;
+    return location.length > maxLength ? location.slice(0, maxLength) + "..." : location;
+};
+
+export const ReverseMapAddressFormatted = () => {
+    const location = useReverseGeocode();
+    return <span>{location ? formatLocation(location) : "Fetching..."}</span>;
+};
+
+export const ReverseMapAddressRaw = () => {
+    const location = useReverseGeocode();
+    return <span>{location || "Fetching..."}</span>;
+};

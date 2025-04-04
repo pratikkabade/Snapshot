@@ -38,7 +38,7 @@ function NoteManager() {
         onSnapshot(q, (querySnapshot) => {
             const noteList: { id: string, data: any }[] = [] // Explicitly define the type of noteList
             querySnapshot.forEach((doc) => {
-                doc.data().email === user.email &&
+                doc.data().email === user?.email &&
                     noteList.push({
                         id: doc.id,
                         data: doc.data()

@@ -39,7 +39,7 @@ function TaskManager() {
         onSnapshot(q, (querySnapshot) => {
             const taskList: { id: string, data: any }[] = [] // Explicitly define the type of taskList
             querySnapshot.forEach((doc) => {
-                doc.data().email === user.email &&
+                doc.data().email === user?.email &&
                     taskList.push({
                         id: doc.id,
                         data: doc.data()
