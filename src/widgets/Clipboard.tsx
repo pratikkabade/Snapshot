@@ -5,6 +5,7 @@ import {
 } from "firebase/firestore";
 import { db } from '../config/Firebase';
 import { Alert, Button, Tooltip } from 'flowbite-react';
+import { Link, useLocation } from 'react-router-dom';
 
 // Types
 interface ClipboardItem {
@@ -25,6 +26,15 @@ const Clipboard: React.FC = () => {
   const [message, setMessage] = useState<string>('');
   const [alert, setAlert] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(true);
+  const [timeOut, setTimeOut] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setTimeOut(false)
+    }, 3000)
+    return () => clearTimeout(timer)
+  })
+
 
   // Fetch clipboard items
   useEffect(() => {
@@ -88,24 +98,41 @@ const Clipboard: React.FC = () => {
     }
   };
 
+  const renderPasteFromClipboard = () => (
+    <div className='flex justify-center mt-1 mb-4'>
+      <Tooltip content='All these items are public.'>
+        <Button pill outline color={'blue'} onClick={pasteFromClipboard}>
+          Paste from Clipboard
+        </Button>
+      </Tooltip>
+    </div>
+  )
+
+  const location = useLocation();
+  const NOTHomePage = !["/"].includes(location.pathname);
   const renderHeader = () => (
-    <>
-      <h3 className="text-2xl text-amber-700 font-semibold text-center mt-2 mb-5">
-        <i className='fa-solid fa-clipboard mr-3'></i>
-        Clipboard ({clipboardItems.length})
-      </h3>
-      <div className='flex justify-center mb-4'>
-        <Tooltip content='All these items are public.'>
-          <Button pill outline color={'blue'} onClick={pasteFromClipboard}>
-            Paste from Clipboard
-          </Button>
-        </Tooltip>
-      </div>
-    </>
+    <div className="flex flex-row justify-center text-2xl text-slate-700 font-semibold text-center mt-2 mb-5">
+      {NOTHomePage ?
+        <></>
+        :
+        <Link to={'/Clipboard'} className="p-2 px-4 rounded-full border-2 border-white hover:border-slate-300">
+          <i className='fa-solid fa-clipboard mr-3'></i>
+          Clipboard ({clipboardItems.length})
+        </Link>
+      }
+    </div>
   );
 
+  useEffect(() => {
+    if (NOTHomePage) {
+      document.title = `Clipboard (${clipboardItems.length})`
+    }
+  }, [clipboardItems.length, NOTHomePage])
+
+
   const renderItems = () => (
-    <ul className={`rounded-lg overflow-y-auto ${message === '' ? 'max-h-44' : 'max-h-28'}`}>
+    <ul className={`fade-in2 rounded-lg overflow-y-auto overflow-x-auto ${message === '' ? 'h-full' : NOTHomePage ? 'h-96' : 'h-52'}`}>
+      {renderPasteFromClipboard()}
       {clipboardItems.map((item) => (
         <li key={item.id} className="p-3 bg-gray-100 my-2 rounded-xl">
           <div className="flex justify-between items-center mb-2">
@@ -129,8 +156,11 @@ const Clipboard: React.FC = () => {
   );
 
   const renderEmpty = () => (
-    <div className="text-center p-6 bg-gray-50 rounded">
-      <p className="text-gray-500">No clipboard items yet. Be the first to paste something!</p>
+    <div className="p-6">
+      <div className='bg-white rounded-xl shadow-md text-center scrl h-72'>
+        {renderPasteFromClipboard()}
+        <p className="text-gray-500">No clipboard items yet. Be the first to paste something!</p>
+      </div>
     </div>
   );
 
@@ -143,11 +173,15 @@ const Clipboard: React.FC = () => {
   );
 
   return (
-    <div className="p-2 scrl h-80 rounded-lg">
-      {renderHeader()}
-      {loading ? <h3 className="text-xl text-center font-bold animate-pulse">Loading..</h3> :
-        clipboardItems.length > 0 ? renderItems() : renderEmpty()}
-      {renderMessage()}
+    <div className="flex flex-col justify-center items-center">
+      <div className={`bg-white rounded-xl shadow-md p-2 ${NOTHomePage ? 'w-5/6' : 'w-full'}`}>
+        {renderHeader()}
+        <div className={`${NOTHomePage ? '' : 'scrl h-72'}`}>
+          {loading || timeOut ? <h3 className="scrl h-72 text-xl text-center font-bold animate-pulse">Loading..</h3> :
+            clipboardItems.length > 0 ? renderItems() : renderEmpty()}
+          {renderMessage()}
+        </div>
+      </div>
     </div>
   );
 };

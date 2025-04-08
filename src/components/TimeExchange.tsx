@@ -17,8 +17,8 @@ export const TimeExchange = () => {
     }
 
     const LocalTimeText = new Date()
-    const LocalHours = LocalTimeText.getHours().toString()
-    const LocalMinutes = LocalTimeText.getMinutes().toString()
+    const LocalHours = LocalTimeText.getHours().toString().padStart(2, '0')
+    const LocalMinutes = LocalTimeText.getMinutes().toString().padStart(2, '0')
 
     // esc to close modal
     window.addEventListener('keydown', (event: any) => {
@@ -122,7 +122,10 @@ export const TimeExchange = () => {
                     </div>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button color="gray" onClick={() => setOpenModal(false)}>
+                    <Button color="gray" onClick={() => {
+                        setOpenModal(false);
+                        setLocal(true);
+                    }}>
                         Close
                     </Button>
                 </Modal.Footer>

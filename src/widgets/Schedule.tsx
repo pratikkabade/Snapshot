@@ -1,7 +1,7 @@
 import { Button } from "flowbite-react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { DateDifference } from "./DateDifference"
-import { ProjectNavbar } from "../components/layout/Navbar"
+import { Link, useLocation } from "react-router-dom";
 
 export const Schedule = () => {
     // States
@@ -83,12 +83,33 @@ export const Schedule = () => {
         setVisibility(!visibility)
     }
 
+    const location = useLocation();
+    const NOTHomePage = !["/"].includes(location.pathname);
+    const renderHeader = () => (
+        <div className="flex flex-row justify-center text-2xl text-sky-700 font-semibold text-center mt-2 mb-5">
+            {NOTHomePage ?
+                <></>
+                :
+                <Link to={'/Scheduler'} className="p-2 px-4 rounded-full border-2 border-white hover:border-sky-300">
+                    <i className='fa-solid fa-calendar mr-3'></i>
+                    Scheduler
+                </Link>
+            }
+        </div>
+    );
+
+    useEffect(() => {
+        if (NOTHomePage) {
+            document.title = `Scheduler`
+        }
+    }, [NOTHomePage])
+
     // Output
     return (
-        <div>
-            <ProjectNavbar />
-            <div className="bg-sky-50 flex flex-col justify-center items-center">
-                <div className="flex lg:w-3/6 md:w-4/6 sm:w-5/6 flex-col">
+        <div className="flex flex-col justify-center items-center">
+            <div className={`flex flex-col justify-center items-center bg-white rounded-xl shadow-md p-2 ${NOTHomePage ? '' : 'w-full'}`}>
+                {renderHeader()}
+                <div className={`flex flex-col w-5/6`}>
                     <div className="flex flex-col py-3">
                         <input type="text" onChange={event1} placeholder='Event Name'
                             className="flex flex-col hover:cursor-pointer hover:shadow-sm p-3 rounded-xl text-xl w-full border-2 border-sky-300 bg-sky-100" />
@@ -136,28 +157,25 @@ export const Schedule = () => {
                                     </Button>
                                 </div>
 
-                                <div className="flex flex-row flex-wrap justify-center items-center" id="Recurring">
-                                    <div className="flex flex-col m-2 p-2 rounded-xl border-2 border-sky-300 bg-sky-100">
-                                        <h3>Recurring ends on</h3>
-                                        <div className="smaller ">
-                                            <div className="m-2">
-                                                <DateDifference />
-                                            </div>
+                                <div className="flex flex-row flex-wrap justify-center items-center m-2 p-2 rounded-xl bg-rose-100">
+                                    <div className="flex flex-col">
+                                        <h3 className="text-xl mx-5">Recursion ends on</h3>
+                                        <div className="smaller flex flex-row items-end justify-end flex-wrap">
                                             <input type="date" onChange={event7}
-                                                className="flex flex-col hover:cursor-pointer hover:shadow-sm m-2 p-2 rounded-xl border-2 border-blue-300 bg-blue-200" />
+                                                className="flex flex-col hover:cursor-pointer hover:shadow-sm m-2 p-2 rounded-xl border-2 border-red-300 bg-red-200" />
                                             <input type="time" onChange={event7t}
-                                                className="flex flex-col hover:cursor-pointer hover:shadow-sm m-2 p-2 rounded-xl border-2 border-blue-300 bg-blue-200" />
+                                                className="flex flex-col hover:cursor-pointer hover:shadow-sm m-2 p-2 rounded-xl border-2 border-red-300 bg-red-200" />
                                         </div>
+                                    </div>
+                                    <div className="m-2">
+                                        <DateDifference />
                                     </div>
                                 </div>
                             </div>
                             :
-                            <a href="#Recurring" rel="noreferrer">
-                                <Button color="yellow" onClick={show} className="mx-4">
-                                    Recurring <i className="fa-solid fa-repeat ml-2"></i>
-                                </Button>
-                            </a>
-
+                            <Button color="yellow" onClick={show} className="mx-4">
+                                Recurring <i className="fa-solid fa-repeat ml-2"></i>
+                            </Button>
                         }
 
                     </div>
