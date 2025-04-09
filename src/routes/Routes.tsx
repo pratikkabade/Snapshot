@@ -7,6 +7,9 @@ import { ProjectNavbar } from "../components/layout/Navbar"
 import TaskManager from "../widgets/tasks/TaskManager"
 import NoteManager from "../widgets/notes/NoteManager"
 import Clipboard from "../widgets/Clipboard"
+import ContactManager from "../widgets/ContactManager"
+import BookmarkManager from "../widgets/BookmarkManager"
+import TimeTracker from "../widgets/TimeTracker"
 
 export const Route_Items = [
     { name: "Home", link: "/", element: <NewHome /> },
@@ -14,6 +17,9 @@ export const Route_Items = [
     { name: "Tasks", link: "/Tasks", element: <TaskManager /> },
     { name: "Notes", link: "/Notes", element: <NoteManager /> },
     { name: "Clipboard", link: "/Clipboard", element: <Clipboard /> },
+    { name: "Contacts", link: "/Contacts", element: <ContactManager /> },
+    { name: "Bookmarks", link: "/Bookmarks", element: <BookmarkManager /> },
+    { name: "TimeTracker", link: "/TimeTracker", element: <TimeTracker /> },
 
     { name: "OldHome", link: "/OldHome", element: <Home /> },
 ]

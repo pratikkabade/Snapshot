@@ -6,6 +6,9 @@ import { Schedule } from "../widgets/Schedule"
 import { TodayWidget } from "../widgets/TodayWidget"
 import NoteManager from "../widgets/notes/NoteManager"
 import TaskManager from "../widgets/tasks/TaskManager"
+import ContactManager from "../widgets/ContactManager"
+import BookmarkManager from "../widgets/BookmarkManager"
+import TimeTracker from "../widgets/TimeTracker"
 
 export const NewHome = () => {
     useEffect(() => {
@@ -35,7 +38,18 @@ export const NewHome = () => {
                 <div className="col-span-3 max-md:col-span-4">
                     <Schedule />
                 </div>
+                <div className="col-span-1 max-md:col-span-4">
+                    <ContactManager />
+                </div>
             </div>
-        </section>
+            <div className="grid grid-cols-3 gap-4 px-10 max-md:px-2">
+                <div className="col-span-1 max-md:col-span-3">
+                    <BookmarkManager />
+                </div>
+                <div className="col-span-2 max-md:col-span-3">
+                    <TimeTracker />
+                </div>
+            </div>
+        </section >
     )
 }
