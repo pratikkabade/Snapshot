@@ -45,7 +45,7 @@
     backdrop-filter: blur(3px) !important;
 }
 
-.scrl{
+.scrl {
     overflow-y: scroll;
-    scrollbar-color: rgba(59, 131, 246, 0) rgba(59, 131, 246, 0);
+    scrollbar-width: thin;
 }
