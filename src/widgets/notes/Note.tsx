@@ -13,7 +13,7 @@ export const Note = ({ id, title }: any) => {
     }
 
     return (
-        <div className="m-1 fade-in2 flex flex-row justify-between items-center align-middle content-center px-3 py-1.5 hover:bg-amber-50 rounded-lg group border-2 border-slate-500 ">
+        <div className="m-1 fade-in2 flex flex-row justify-between items-center align-middle content-center px-3 py-1.5 bg-white hover:bg-emerald-50 rounded-lg group border-2 border-slate-500 ">
             <div
                 className="ml-3">
                 <h3 className="text-lg font-bold cursor-default">{title}</h3>

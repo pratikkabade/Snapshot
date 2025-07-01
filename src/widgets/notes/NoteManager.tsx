@@ -56,17 +56,17 @@ function NoteManager() {
         )
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         if (NOTHomePage) {
             document.title = `Notes (${totalNotes})`
         }
-    },[totalNotes, NOTHomePage])
+    }, [totalNotes, NOTHomePage])
 
     if (user === null || timeOut) return (
         <div className="flex flex-col justify-center items-center">
-            <div className={`bg-white rounded-xl shadow-md p-2 ${NOTHomePage ? 'w-4/6' : 'w-full'}`}>
+            <div className={`p-2 ${NOTHomePage ? 'w-4/6' : 'bg-white rounded-xl shadow-md w-full'}`}>
                 {renderHeader()}
-                <div className='scrl h-72'>
+                <div className={`${!NOTHomePage && 'scrl h-72'}`}>
                     {
                         user ?
                             <h3 className="text-xl text-center font-bold animate-pulse">Loading..</h3>
@@ -80,7 +80,7 @@ function NoteManager() {
 
     return (
         <div className="flex flex-col justify-center items-center">
-            <div className={`bg-white rounded-xl shadow-md p-2 ${NOTHomePage ? 'w-5/6' : 'w-full'}`}>
+            <div className={`p-2 ${NOTHomePage ? 'w-5/6' : 'bg-white rounded-xl shadow-md w-full'}`}>
                 {renderHeader()}
                 {/* <div className='scrl h-72'> */}
                 <div className={`flex flex-row flex-wrap ${NOTHomePage ? '' : 'scrl h-72'}`}>

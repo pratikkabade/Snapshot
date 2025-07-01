@@ -178,8 +178,8 @@ const Clipboard: React.FC = () => {
             {renderPasteFromClipboard()}
             <ul className={`fade-in2 rounded-lg overflow-y-auto overflow-x-auto h-full flex flex-row flex-wrap gap-5 justify-center`}>
                 {clipboardItems.map((item) => (
-                    <li key={item.id} className="p-3 bg-gray-50 border-2 border-gray-200 my-2 rounded-lg w-96 h-fit">
-                        <pre onClick={() => copyItem(item)} className={`whitespace-pre-wrap bg-white p-2 rounded-lg text-sm overflow-x-auto overflow-y-auto max-h-60 cursor-pointer border-gray-100 hover:border-gray-600 border-2 ${item.id === itemSelected ? 'bg-green-200 hover:border-green-600 text-gray-600' : ''}`}>
+                    <li key={item.id} className="p-3 bg-white border-2 border-gray-100 my-2 rounded-lg w-96 h-fit">
+                        <pre onClick={() => copyItem(item)} className={`whitespace-pre-wrap bg-gray-50 p-2 rounded-lg text-sm overflow-x-auto overflow-y-auto max-h-60 cursor-pointer border-gray-100 hover:border-gray-600 border-2 ${item.id === itemSelected ? 'bg-green-200 hover:border-green-600 text-gray-600' : ''}`}>
                             {item.content}
                         </pre>
                         <div className="flex justify-between items-center mt-2">
@@ -209,7 +209,7 @@ const Clipboard: React.FC = () => {
 
     const renderEmpty = () => (
         <div className="p-6">
-            <div className='bg-white rounded-xl shadow-md text-center scrl h-72'>
+            <div className='text-center scrl h-72'>
                 {renderPasteFromClipboard()}
                 <p className="text-gray-500">No clipboard items yet. Be the first to paste something!</p>
             </div>
@@ -226,10 +226,10 @@ const Clipboard: React.FC = () => {
 
     if (NOTHomePage) return (
         <div className="flex flex-col justify-center items-center">
-            <div className={`bg-white rounded-xl shadow-md p-2 w-10/12`}>
+            <div className={`p-2 w-10/12`}>
                 {renderHeader()}
                 <div>
-                    {loading ? <h3 className="scrl h-72 text-xl text-center font-bold animate-pulse">Loading..</h3> :
+                    {loading ? <h3 className="text-xl text-center font-bold animate-pulse">Loading..</h3> :
                         clipboardItems.length > 0 ? renderBigItems() : renderEmpty()}
                     {renderBigMessage()}
                 </div>
