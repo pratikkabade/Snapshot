@@ -27,7 +27,7 @@ const formatDate = (date: Date | null): string => {
     const days = Math.floor(hours / 24);
     const weeks = Math.floor(days / 7);
 
-    if (seconds < 60) return `${seconds} second${seconds !== 1 ? 's' : ''} ago`;
+    if (seconds < 60) return `Just now`;
     if (minutes < 60) return `${minutes} minute${minutes !== 1 ? 's' : ''} ago`;
     if (hours < 24) return `${hours} hour${hours !== 1 ? 's' : ''} ago`;
     if (days < 7) return `${days} day${days !== 1 ? 's' : ''} ago`;
@@ -48,7 +48,7 @@ const Clipboard: React.FC = () => {
     // useEffect(() => {
     //     const timer = setTimeout(() => {
     //         setTimeOut(false)
-    //     }, 3000)
+    //     }, 5000)
     //     return () => clearTimeout(timer)
     // })
 
@@ -81,7 +81,7 @@ const Clipboard: React.FC = () => {
         setTimeout(() => {
             setMessage('');
             setAlert('');
-        }, 3000);
+        }, 5000);
     };
 
     const pasteFromClipboard = async () => {
@@ -106,7 +106,7 @@ const Clipboard: React.FC = () => {
             .catch(err => showMessage(`Failed to copy: ${err instanceof Error ? err.message : String(err)}`, 'failure'));
         setTimeout(() => {
             setItemSelected('');
-        }, 3000);
+        }, 5000);
     };
 
     const removeItem = async (id: string) => {
@@ -138,6 +138,7 @@ const Clipboard: React.FC = () => {
                     Clipboard ({clipboardItems.length})
                 </Link>
             }
+            {renderMessage()}
         </div>
     );
 
@@ -151,11 +152,11 @@ const Clipboard: React.FC = () => {
     const renderItems = () => (
         <div>
             {renderPasteFromClipboard()}
-            <ul className={`fade-in2 rounded-lg overflow-y-auto overflow-x-auto ${message === '' ? 'h-full' : 'h-36'}`}>
+            <ul className={`fade-in2 rounded-lg overflow-y-auto overflow-x-auto h-full`}>
                 {clipboardItems.map((item) => (
                     <li key={item.id} className="p-3 bg-gray-100 my-2 rounded-xl">
-                        <pre onClick={() => copyItem(item)} className={`whitespace-pre-wrap bg-white p-2 rounded-lg text-sm overflow-x-auto overflow-y-auto max-h-60 cursor-pointer border-gray-100 hover:border-gray-600 border-2 ${item.id === itemSelected ? 'bg-green-200 hover:border-green-600 text-gray-600' : ''}`}>
-                            {item.content}
+                        <pre onClick={() => copyItem(item)} className={`whitespace-pre-wrap p-2 rounded-lg text-sm overflow-x-auto overflow-y-auto max-h-60 cursor-pointer border-2 ${item.id === itemSelected ? 'bg-green-50 border-green-500 hover:border-green-500 text-green-600' : 'bg-gray-50 border-gray-100 hover:border-gray-600 text-gray-600'}`}>
+                        {item.content}
                         </pre>
                         <div className="flex justify-between items-center mt-2">
                             <span className="font-medium text-sm text-gray-500">
@@ -179,7 +180,7 @@ const Clipboard: React.FC = () => {
             <ul className={`fade-in2 rounded-lg overflow-y-auto overflow-x-auto h-full flex flex-row flex-wrap gap-5 justify-center`}>
                 {clipboardItems.map((item) => (
                     <li key={item.id} className="p-3 bg-white border-2 border-gray-100 my-2 rounded-lg w-96 h-fit">
-                        <pre onClick={() => copyItem(item)} className={`whitespace-pre-wrap bg-gray-50 p-2 rounded-lg text-sm overflow-x-auto overflow-y-auto max-h-60 cursor-pointer border-gray-100 hover:border-gray-600 border-2 ${item.id === itemSelected ? 'bg-green-200 hover:border-green-600 text-gray-600' : ''}`}>
+                        <pre onClick={() => copyItem(item)} className={`whitespace-pre-wrap p-2 rounded-lg text-sm overflow-x-auto overflow-y-auto max-h-60 cursor-pointer border-2 ${item.id === itemSelected ? 'bg-green-50 border-green-500 hover:border-green-500 text-green-600' : 'bg-gray-50 border-gray-100 hover:border-gray-600 text-gray-600'}`}>
                             {item.content}
                         </pre>
                         <div className="flex justify-between items-center mt-2">
@@ -199,7 +200,7 @@ const Clipboard: React.FC = () => {
     );
 
     const renderBigMessage = () => (
-        message && <div className="fixed bottom-5 right-5 mt-2 p-2 cursor-default">
+        message && <div className="fade-in fixed bottom-5 right-5 cursor-default">
             <Alert color={alert}>
                 {message}
             </Alert>
@@ -209,7 +210,7 @@ const Clipboard: React.FC = () => {
 
     const renderEmpty = () => (
         <div className="p-6">
-            <div className='text-center scrl h-72'>
+            <div className='text-center h-72'>
                 {renderPasteFromClipboard()}
                 <p className="text-gray-500">No clipboard items yet. Be the first to paste something!</p>
             </div>
@@ -217,7 +218,7 @@ const Clipboard: React.FC = () => {
     );
 
     const renderMessage = () => (
-        message && <div className="mt-2 p-2">
+        message && !NOTHomePage && <div className="fade-in cursor-default">
             <Alert color={alert}>
                 {message}
             </Alert>
@@ -245,7 +246,6 @@ const Clipboard: React.FC = () => {
                 <div className='scrl h-72'>
                     {loading ? <h3 className="scrl h-72 text-xl text-center font-bold animate-pulse">Loading..</h3> :
                         clipboardItems.length > 0 ? renderItems() : renderEmpty()}
-                    {renderMessage()}
                 </div>
             </div>
         </div>
