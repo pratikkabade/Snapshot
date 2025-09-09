@@ -1,10 +1,10 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     query, orderBy, onSnapshot, addDoc, where,
-    deleteDoc, doc, collection, serverTimestamp, Timestamp, getDocs
+    deleteDoc, doc, collection, serverTimestamp, Timestamp
 } from "firebase/firestore";
 import { db, auth } from '../config/Firebase';
-import { Alert, Button, Tooltip, TextInput } from 'flowbite-react';
+import { Alert, Button, TextInput } from 'flowbite-react';
 import { Link, useLocation } from 'react-router-dom';
 
 // Types

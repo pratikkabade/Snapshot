@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { GoogleAPIKey } from "../constants/GoogleAPIKey";
 
 export const Direction = () => {
-    const [LAT, setLat] = useState(null);
-    const [LONG, setLong] = useState(null);
+    const [LAT, setLat] = useState<number | null>(null);
+    const [LONG, setLong] = useState<number | null>(null);
     const [direction, setDirection] = useState(null);
 
     useEffect(() => {

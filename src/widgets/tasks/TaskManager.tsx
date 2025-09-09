@@ -9,7 +9,7 @@ import { Link, useLocation } from 'react-router-dom'
 
 function TaskManager() {
     const [view, setView] = useState(false)
-    const [tasks, setTasks] = useState([])
+    const [tasks, setTasks] = useState<{ id: string; data: any }[]>([])
     const [showCompleted, setShowCompleted] = useState(false)
     const [timeOut, setTimeOut] = useState(true)
 

@@ -2,9 +2,14 @@ import { useState } from "react";
 import { ReadURL } from "../constants/URLS";
 import { CheckBox } from "../hooks/Checkbox";
 
+interface Task {
+    name: string;
+    val: string;
+}
+
 export function TasksWidget() {
     // SHEET
-    const [task, setTask] = useState([])
+    const [task, setTask] = useState<Task[]>([]);
     const [loading, setLoading] = useState(true)
 
 

@@ -17,7 +17,7 @@ export const AddTask = ({ open, onClose }: any) => {
                 description: description,
                 completed: false,
                 created: Timestamp.now(),
-                email: user.email
+                email: user?.email || 'unknown'
             })
             onClose()
         } catch (err) {

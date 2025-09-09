@@ -7,7 +7,7 @@ export const WeatherWidget = () => {
     const [humidity, setHumidity] = useState(null)
     const [rain, setRain] = useState(null)
     const [wind, setWind] = useState(null)
-    const [h, setH] = useState(null)
+    const [h, setH] = useState<number | null>(null);
 
     // set h as current hour and avoid multiple rerender
     useEffect(() => {
@@ -20,8 +20,8 @@ export const WeatherWidget = () => {
     }, []);
 
     // usestate to store the coordinates
-    const [LAT, setLat] = useState(null);
-    const [LONG, setLong] = useState(null);
+    const [LAT, setLat] = useState<number | null>(null);
+    const [LONG, setLong] = useState<number | null>(null);
 
     // get the coordinates from the browser
     navigator.geolocation.getCurrentPosition((position) => {
@@ -38,10 +38,10 @@ export const WeatherWidget = () => {
                 throw new Error('Network response was not ok');
             }
             const data = await response.json();
-            const temperatureData = data.hourly.temperature_2m[h];
-            const humidityData = data.hourly.relative_humidity_2m[h];
-            const rainData = data.hourly.rain[h];
-            const windData = data.hourly.wind_speed_10m[h];
+            const temperatureData = data.hourly.temperature_2m[h || 0];
+            const humidityData = data.hourly.relative_humidity_2m[h || 0];
+            const rainData = data.hourly.rain[h || 0];
+            const windData = data.hourly.wind_speed_10m[h || 0];
             setTemperature(temperatureData);
             setHumidity(humidityData);
             setRain(rainData);
@@ -88,7 +88,7 @@ export const WeatherWidget = () => {
                     >
                         <div className="flex flex-col">
                             <div className=' -ml-1 flex flex-row align-middle items-center'>
-                                {h > 6 && h < 18 ? (
+                                {h !== null && h > 6 && h < 18 ? (
                                     <img
                                         src='https://img.icons8.com/color/48/000000/sun--v1.png'
                                         alt='sun'

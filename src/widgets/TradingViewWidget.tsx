@@ -20,17 +20,23 @@ const TradingViewWidget = () => {
     });
 
     // Append script to here id
-    document.getElementById('here').appendChild(script);
+    const container = document.getElementById('here');
+    if (container) {
+      container.appendChild(script);
+    }
 
 
     // Cleanup function to remove script from the body on component unmount
     return () => {
-      document.getElementById('here').removeChild(script);
+      const container = document.getElementById('here');
+      if (container) {
+        container.removeChild(script);
+      }
     };
   }, []);
 
   return (
-    <div className='p-10 justify-center content-center content-center'>
+    <div className='p-10 justify-center content-center'>
       <div id="here" className='mx-auto'></div>
     </div>
   );

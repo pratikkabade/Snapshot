@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import {
   query, orderBy, onSnapshot, addDoc, where,
-  deleteDoc, doc, collection, serverTimestamp, Timestamp, getDocs
+  deleteDoc, doc, collection, serverTimestamp, Timestamp
 } from "firebase/firestore";
 import { db, auth } from '../config/Firebase';
 import { Alert, Button, Tooltip, TextInput } from 'flowbite-react';
@@ -150,39 +150,58 @@ const ContactManager: React.FC = () => {
     showMessage('Processing CSV file...', 'info');
     setUploadInProgress(true);
 
-    Papa.parse(file, {
+    interface ParsedContactRow {
+      'First Name'?: string;
+      'Middle Name'?: string;
+      'Last Name'?: string;
+      'E-mail 1 - Value'?: string;
+      'Phone 1 - Value'?: string;
+      'Address 1 - Formatted'?: string;
+      'Address 1 - Street'?: string;
+      'Address 1 - City'?: string;
+      'Address 1 - Region'?: string;
+      'Address 1 - Postal Code'?: string;
+      'Address 1 - Country'?: string;
+      'Notes'?: string;
+      'Photo'?: string;
+      'Organization Name'?: string;
+      'Organization Title'?: string;
+    }
+
+    interface PapaParseResult {
+      data: ParsedContactRow[];
+      errors: unknown[];
+      meta: unknown;
+    }
+
+    Papa.parse<ParsedContactRow>(file, {
       header: true,
       skipEmptyLines: true,
-      complete: async (results) => {
+      complete: async (results: PapaParseResult) => {
         try {
-          const data = results.data as Record<string, string>[];
+          const data = results.data;
 
           let successCount = 0;
           let errorCount = 0;
 
           for (const row of data) {
             try {
-              // Extract name from different fields
               const firstName = row['First Name'] || '';
               const middleName = row['Middle Name'] || '';
               const lastName = row['Last Name'] || '';
               const email = row['E-mail 1 - Value'] || '';
 
-              // Build full name
               let fullName = firstName;
               if (middleName) fullName += ' ' + middleName;
               if (lastName) fullName += ' ' + lastName;
 
-              // Extract phone - try different possible fields
               const phoneValue = row['Phone 1 - Value'] || '';
 
-              // Skip records without at least a name and phone
               if (!fullName.trim() || !phoneValue.trim()) {
                 errorCount++;
                 continue;
               }
 
-              // Build address from different fields if available
               let address = '';
               if (row['Address 1 - Formatted']) {
                 address = row['Address 1 - Formatted'];
@@ -199,31 +218,11 @@ const ContactManager: React.FC = () => {
                 }
               }
 
-              // Get notes
               const notes = row['Notes'] || '';
-
-              // Get photo URL
               const photoUrl = row['Photo'] || '';
-
-              // Get organization details
               const organization = row['Organization Name'] || '';
               const title = row['Organization Title'] || '';
 
-              // let organizationInfo = '';
-              // if (organization) {
-              //   organizationInfo = organization;
-              //   if (title) organizationInfo += ` - ${title}`;
-              // }
-
-              // Combine notes and organization info
-              // let combinedNotes = notes;
-              // if (organizationInfo) {
-              //   combinedNotes = combinedNotes ?
-              //     `${combinedNotes}\nOrganization: ${organizationInfo}` :
-              //     `Organization: ${organizationInfo}`;
-              // }
-
-              // Create the final contact object to save
               const contactData = {
                 name: fullName.trim(),
                 phone: phoneValue.trim(),
@@ -252,7 +251,6 @@ const ContactManager: React.FC = () => {
             showMessage(`Failed to add contacts. Please check your CSV format.`, 'failure');
           }
 
-          // Reset file input
           if (fileInputRef.current) {
             fileInputRef.current.value = '';
           }
@@ -263,7 +261,7 @@ const ContactManager: React.FC = () => {
           setUploadInProgress(false);
         }
       },
-      error: (error) => {
+      error: (error: Error) => {
         console.error("Papa parse error:", error);
         showMessage(`Error parsing CSV: ${error.message}`, 'failure');
         setUploadInProgress(false);

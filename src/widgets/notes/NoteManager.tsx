@@ -6,9 +6,18 @@ import { AddNote } from './AddNote'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { Link, useLocation } from 'react-router-dom'
 
+interface Note{
+    id: string;
+    data: {
+        title: string;
+        created: any;
+        email: string;
+    }
+}
+
 function NoteManager() {
     const [view, setView] = useState(false)
-    const [notes, setNotes] = useState([])
+    const [notes, setNotes] = useState<Note[]>([])
     const [timeOut, setTimeOut] = useState(true)
 
     const [user] = useAuthState(auth);

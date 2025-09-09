@@ -14,7 +14,7 @@ export const AddNote = ({ open, onClose }: any) => {
             await addDoc(notesCollectionRef, {
                 title: title,
                 created: Timestamp.now(),
-                email: user.email
+                email: user?.email || 'unknown'
             })
             onClose()
         } catch (err) {

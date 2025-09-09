@@ -28,7 +28,7 @@ export const GoogleSignIn = () => {
                             }
                         >
                             <div className="flex flex-row align-middle items-center max-sm:p-5">
-                                <img src={user.photoURL} alt={user.displayName} className="rounded-full h-24 lg:rounded-full lg:h-28  w-fit shadow-sm hover:shadow-lg hover:brightness-105 mr-5" />
+                                <img src={user.photoURL || ""} alt={user.displayName || "User"} className="rounded-full h-24 lg:rounded-full lg:h-28  w-fit shadow-sm hover:shadow-lg hover:brightness-105 mr-5" />
                                 <h1 className="hidden max-sm:flex text-3xl font-semibold">
                                     {user.displayName}
                                 </h1>
