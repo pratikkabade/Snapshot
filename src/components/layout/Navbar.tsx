@@ -3,7 +3,7 @@ import { Navbar } from "flowbite-react"
 
 export const ProjectNavbar = () => {
     return (
-        <div className="sticky top-0 shadow-sm bg-sky-50 z-50">
+        <div className="sticky top-0 shadow-sm bg-sky-50 dark:bg-gray-800 z-50">
             <Navbar fluid={true} rounded={true} className="container bg-sky-50 mx-auto">
                 <Link
                     className="text-gray-600 hover:text-blue-700 dark:text-gray-200 dark:hover:text-white"
