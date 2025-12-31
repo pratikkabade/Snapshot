@@ -1,0 +1,1353 @@
+{
+    "phase1": {
+        "Name": "Foundation",
+        "Content": {
+            "Week 1": {
+                "dates": [
+                    "01-01-2026",
+                    "02-01-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Algorithm Analysis, Math, Bit Magic",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Linux basics (files, users, permissions)",
+                        "tag": "DEVOPS"
+                    },
+                    {
+                        "name": "CAP theorem",
+                        "tag": "SYSTEM"
+                    }
+                ]
+            },
+            "Week 2": {
+                "dates": [
+                    "05-01-2026",
+                    "06-01-2026",
+                    "07-01-2026",
+                    "08-01-2026",
+                    "09-01-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Recursion",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Feedforward Neural Networks",
+                        "tag": "GENAI"
+                    },
+                    {
+                        "name": "Load estimation & caching",
+                        "tag": "SYSTEM"
+                    }
+                ]
+            },
+            "Week 3": {
+                "dates": [
+                    "12-01-2026",
+                    "13-01-2026",
+                    "14-01-2026",
+                    "15-01-2026",
+                    "16-01-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Arrays",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Linux services & networking",
+                        "tag": "DEVOPS"
+                    },
+                    {
+                        "name": "Loss functions & optimization intuition",
+                        "tag": "GENAI"
+                    }
+                ]
+            },
+            "Week 4": {
+                "dates": [
+                    "19-01-2026",
+                    "20-01-2026",
+                    "21-01-2026",
+                    "22-01-2026",
+                    "23-01-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Searching (Binary Search)",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Shell scripting basics",
+                        "tag": "DEVOPS"
+                    },
+                    {
+                        "name": "REST API basics",
+                        "tag": "SYSTEM"
+                    }
+                ]
+            },
+            "Week 5": {
+                "dates": [
+                    "26-01-2026",
+                    "27-01-2026",
+                    "28-01-2026",
+                    "29-01-2026",
+                    "30-01-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Sorting",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Backpropagation",
+                        "tag": "GENAI"
+                    },
+                    {
+                        "name": "Shell control flow",
+                        "tag": "DEVOPS"
+                    }
+                ]
+            },
+            "Week 6": {
+                "dates": [
+                    "02-02-2026",
+                    "03-02-2026",
+                    "04-02-2026",
+                    "05-02-2026",
+                    "06-02-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Hashing",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Filesystem automation",
+                        "tag": "DEVOPS"
+                    },
+                    {
+                        "name": "Pagination & rate limiting",
+                        "tag": "SYSTEM"
+                    }
+                ]
+            },
+            "Week 7": {
+                "dates": [
+                    "09-02-2026",
+                    "10-02-2026",
+                    "11-02-2026",
+                    "12-02-2026",
+                    "13-02-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Strings",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "CNNs",
+                        "tag": "GENAI"
+                    },
+                    {
+                        "name": "Reverse proxy & L7 load balancers",
+                        "tag": "SYSTEM"
+                    }
+                ]
+            },
+            "Week 8": {
+                "dates": [
+                    "16-02-2026",
+                    "17-02-2026",
+                    "18-02-2026",
+                    "19-02-2026",
+                    "20-02-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Linked Lists",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Performance monitoring scripts",
+                        "tag": "DEVOPS"
+                    },
+                    {
+                        "name": "RNNs",
+                        "tag": "GENAI"
+                    }
+                ]
+            }
+        }
+    },
+    "phase2": {
+        "Name": "Structure + Hands-On",
+        "Content": {
+            "Week 9": {
+                "dates": [
+                    "23-02-2026",
+                    "24-02-2026",
+                    "25-02-2026",
+                    "26-02-2026",
+                    "27-02-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Stack",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Git fundamentals",
+                        "tag": "DEVOPS"
+                    },
+                    {
+                        "name": "Job queues & workers",
+                        "tag": "SYSTEM"
+                    }
+                ]
+            },
+            "Week 10": {
+                "dates": [
+                    "02-03-2026",
+                    "03-03-2026",
+                    "04-03-2026",
+                    "05-03-2026",
+                    "06-03-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Queue",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Transformers intuition",
+                        "tag": "GENAI"
+                    },
+                    {
+                        "name": "GitHub workflows",
+                        "tag": "DEVOPS"
+                    }
+                ]
+            },
+            "Week 11": {
+                "dates": [
+                    "09-03-2026",
+                    "10-03-2026",
+                    "11-03-2026",
+                    "12-03-2026",
+                    "13-03-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Deque",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "AWS global infra & EC2",
+                        "tag": "DEVOPS"
+                    },
+                    {
+                        "name": "Fault tolerance & replication",
+                        "tag": "SYSTEM"
+                    }
+                ]
+            },
+            "Week 12": {
+                "dates": [
+                    "16-03-2026",
+                    "17-03-2026",
+                    "18-03-2026",
+                    "19-03-2026",
+                    "20-03-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Trees (Traversal)",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Sentiment analysis (Transformers)",
+                        "tag": "GENAI"
+                    },
+                    {
+                        "name": "EC2 security & connectivity",
+                        "tag": "DEVOPS"
+                    }
+                ]
+            },
+            "Week 13": {
+                "dates": [
+                    "23-03-2026",
+                    "24-03-2026",
+                    "25-03-2026",
+                    "26-03-2026",
+                    "27-03-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Trees (Advanced problems)",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Database schema design",
+                        "tag": "SYSTEM"
+                    },
+                    {
+                        "name": "Hugging Face basics",
+                        "tag": "GENAI"
+                    }
+                ]
+            },
+            "Week 14": {
+                "dates": [
+                    "30-03-2026",
+                    "31-03-2026",
+                    "01-04-2026",
+                    "02-04-2026",
+                    "03-04-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "BST",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "ELB & Auto Scaling",
+                        "tag": "DEVOPS"
+                    },
+                    {
+                        "name": "Read/write patterns",
+                        "tag": "SYSTEM"
+                    }
+                ]
+            },
+            "Week 15": {
+                "dates": [
+                    "06-04-2026",
+                    "07-04-2026",
+                    "08-04-2026",
+                    "09-04-2026",
+                    "10-04-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Heap",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Prompt engineering",
+                        "tag": "GENAI"
+                    },
+                    {
+                        "name": "Amazon S3",
+                        "tag": "DEVOPS"
+                    }
+                ]
+            },
+            "Week 16": {
+                "dates": [
+                    "13-04-2026",
+                    "14-04-2026",
+                    "15-04-2026",
+                    "16-04-2026",
+                    "17-04-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Graphs (BFS, DFS)",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Consistent hashing",
+                        "tag": "SYSTEM"
+                    },
+                    {
+                        "name": "CloudWatch basics",
+                        "tag": "DEVOPS"
+                    }
+                ]
+            }
+        }
+    },
+    "phase3": {
+        "Name": "Production Thinking",
+        "Content": {
+            "Week 17": {
+                "dates": [
+                    "20-04-2026",
+                    "21-04-2026",
+                    "22-04-2026",
+                    "23-04-2026",
+                    "24-04-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Graphs (Dijkstra, Prim)",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "LangChain basics",
+                        "tag": "GENAI"
+                    },
+                    {
+                        "name": "CloudFormation intro",
+                        "tag": "DEVOPS"
+                    }
+                ]
+            },
+            "Week 18": {
+                "dates": [
+                    "27-04-2026",
+                    "28-04-2026",
+                    "29-04-2026",
+                    "30-04-2026",
+                    "01-05-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Graphs (Kosaraju)",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Quorum reads/writes",
+                        "tag": "SYSTEM"
+                    },
+                    {
+                        "name": "SNS & SQS",
+                        "tag": "DEVOPS"
+                    }
+                ]
+            },
+            "Week 19": {
+                "dates": [
+                    "04-05-2026",
+                    "05-05-2026",
+                    "06-05-2026",
+                    "07-05-2026",
+                    "08-05-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Greedy algorithms",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Embeddings",
+                        "tag": "GENAI"
+                    },
+                    {
+                        "name": "Kafka fundamentals",
+                        "tag": "SYSTEM"
+                    }
+                ]
+            },
+            "Week 20": {
+                "dates": [
+                    "11-05-2026",
+                    "12-05-2026",
+                    "13-05-2026",
+                    "14-05-2026",
+                    "15-05-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Backtracking",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Docker fundamentals",
+                        "tag": "DEVOPS"
+                    },
+                    {
+                        "name": "Vector databases",
+                        "tag": "GENAI"
+                    }
+                ]
+            },
+            "Week 21": {
+                "dates": [
+                    "18-05-2026",
+                    "19-05-2026",
+                    "20-05-2026",
+                    "21-05-2026",
+                    "22-05-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Dynamic Programming (Intro)",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Data pipelines & indexing",
+                        "tag": "SYSTEM"
+                    },
+                    {
+                        "name": "Docker networking",
+                        "tag": "DEVOPS"
+                    }
+                ]
+            },
+            "Week 22": {
+                "dates": [
+                    "25-05-2026",
+                    "26-05-2026",
+                    "27-05-2026",
+                    "28-05-2026",
+                    "29-05-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "DP (Advanced problems)",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "RAG architecture",
+                        "tag": "GENAI"
+                    },
+                    {
+                        "name": "CI/CD basics",
+                        "tag": "DEVOPS"
+                    }
+                ]
+            },
+            "Week 23": {
+                "dates": [
+                    "01-06-2026",
+                    "02-06-2026",
+                    "03-06-2026",
+                    "04-06-2026",
+                    "05-06-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Trie",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Distributed storage",
+                        "tag": "SYSTEM"
+                    },
+                    {
+                        "name": "RAG implementation",
+                        "tag": "GENAI"
+                    }
+                ]
+            },
+            "Week 24": {
+                "dates": [
+                    "08-06-2026",
+                    "09-06-2026",
+                    "10-06-2026",
+                    "11-06-2026",
+                    "12-06-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Segment Tree",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Jenkins pipelines",
+                        "tag": "DEVOPS"
+                    },
+                    {
+                        "name": "Distributed locks",
+                        "tag": "SYSTEM"
+                    }
+                ]
+            }
+        }
+    },
+    "phase4": {
+        "Name": "Scale & Orchestration",
+        "Content": {
+            "Week 25": {
+                "dates": [
+                    "15-06-2026",
+                    "16-06-2026",
+                    "17-06-2026",
+                    "18-06-2026",
+                    "19-06-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Binary Indexed Tree",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Kubernetes intro",
+                        "tag": "DEVOPS"
+                    },
+                    {
+                        "name": "Consensus basics",
+                        "tag": "SYSTEM"
+                    }
+                ]
+            },
+            "Week 26": {
+                "dates": [
+                    "22-06-2026",
+                    "23-06-2026",
+                    "24-06-2026",
+                    "25-06-2026",
+                    "26-06-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Disjoint Set",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Kubernetes deployments",
+                        "tag": "DEVOPS"
+                    },
+                    {
+                        "name": "QLoRA & PEFT",
+                        "tag": "GENAI"
+                    }
+                ]
+            },
+            "Week 27": {
+                "dates": [
+                    "29-06-2026",
+                    "30-06-2026",
+                    "01-07-2026",
+                    "02-07-2026",
+                    "03-07-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Kubernetes rollouts & probes",
+                        "tag": "DEVOPS"
+                    },
+                    {
+                        "name": "Distributed transactions",
+                        "tag": "SYSTEM"
+                    },
+                    {
+                        "name": "Diffusion models",
+                        "tag": "GENAI"
+                    }
+                ]
+            },
+            "Week 28": {
+                "dates": [
+                    "06-07-2026",
+                    "07-07-2026",
+                    "08-07-2026",
+                    "09-07-2026",
+                    "10-07-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "EKS fundamentals",
+                        "tag": "DEVOPS"
+                    },
+                    {
+                        "name": "Multimodal AI",
+                        "tag": "GENAI"
+                    },
+                    {
+                        "name": "Idempotency",
+                        "tag": "SYSTEM"
+                    }
+                ]
+            },
+            "Week 29": {
+                "dates": [
+                    "13-07-2026",
+                    "14-07-2026",
+                    "15-07-2026",
+                    "16-07-2026",
+                    "17-07-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "HPA & resilience",
+                        "tag": "DEVOPS"
+                    },
+                    {
+                        "name": "DNS resolution",
+                        "tag": "SYSTEM"
+                    },
+                    {
+                        "name": "FastAPI for AI",
+                        "tag": "GENAI"
+                    }
+                ]
+            },
+            "Week 30": {
+                "dates": [
+                    "20-07-2026",
+                    "21-07-2026",
+                    "22-07-2026",
+                    "23-07-2026",
+                    "24-07-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Ingress & Helm",
+                        "tag": "DEVOPS"
+                    },
+                    {
+                        "name": "Dockerizing AI apps",
+                        "tag": "GENAI"
+                    },
+                    {
+                        "name": "Caching TTL strategies",
+                        "tag": "SYSTEM"
+                    }
+                ]
+            },
+            "Week 31": {
+                "dates": [
+                    "27-07-2026",
+                    "28-07-2026",
+                    "29-07-2026",
+                    "30-07-2026",
+                    "31-07-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "RBAC & service accounts",
+                        "tag": "DEVOPS"
+                    },
+                    {
+                        "name": "Local LLMs",
+                        "tag": "GENAI"
+                    },
+                    {
+                        "name": "P2P systems",
+                        "tag": "SYSTEM"
+                    }
+                ]
+            },
+            "Week 32": {
+                "dates": [
+                    "03-08-2026",
+                    "04-08-2026",
+                    "05-08-2026",
+                    "06-08-2026",
+                    "07-08-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Istio basics",
+                        "tag": "DEVOPS"
+                    },
+                    {
+                        "name": "Streamlit / Gradio",
+                        "tag": "GENAI"
+                    },
+                    {
+                        "name": "Metadata systems",
+                        "tag": "SYSTEM"
+                    }
+                ]
+            }
+        }
+    },
+    "phase5": {
+        "Name": "Advanced & Fun Zone",
+        "Content": {
+            "Week 33": {
+                "dates": [
+                    "10-08-2026",
+                    "11-08-2026",
+                    "12-08-2026",
+                    "13-08-2026",
+                    "14-08-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Agentic AI concepts",
+                        "tag": "GENAI"
+                    },
+                    {
+                        "name": "OOP & UML",
+                        "tag": "SYSTEM"
+                    },
+                    {
+                        "name": "Ansible intro",
+                        "tag": "DEVOPS"
+                    }
+                ]
+            },
+            "Week 34": {
+                "dates": [
+                    "17-08-2026",
+                    "18-08-2026",
+                    "19-08-2026",
+                    "20-08-2026",
+                    "21-08-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "CrewAI",
+                        "tag": "GENAI"
+                    },
+                    {
+                        "name": "Creational patterns",
+                        "tag": "SYSTEM"
+                    },
+                    {
+                        "name": "Ansible playbooks",
+                        "tag": "DEVOPS"
+                    }
+                ]
+            },
+            "Week 35": {
+                "dates": [
+                    "24-08-2026",
+                    "25-08-2026",
+                    "26-08-2026",
+                    "27-08-2026",
+                    "28-08-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Guardrails & safety",
+                        "tag": "GENAI"
+                    },
+                    {
+                        "name": "SOLID principles",
+                        "tag": "SYSTEM"
+                    },
+                    {
+                        "name": "Terraform basics",
+                        "tag": "DEVOPS"
+                    }
+                ]
+            },
+            "Week 36": {
+                "dates": [
+                    "31-08-2026",
+                    "01-09-2026",
+                    "02-09-2026",
+                    "03-09-2026",
+                    "04-09-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Evaluation strategies",
+                        "tag": "GENAI"
+                    },
+                    {
+                        "name": "Structural patterns",
+                        "tag": "SYSTEM"
+                    },
+                    {
+                        "name": "Terraform advanced",
+                        "tag": "DEVOPS"
+                    }
+                ]
+            },
+            "Week 37": {
+                "dates": [
+                    "07-09-2026",
+                    "08-09-2026",
+                    "09-09-2026",
+                    "10-09-2026",
+                    "11-09-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Creative AI project",
+                        "tag": "GENAI"
+                    },
+                    {
+                        "name": "Behavioral patterns I",
+                        "tag": "SYSTEM"
+                    },
+                    {
+                        "name": "Prometheus",
+                        "tag": "DEVOPS"
+                    }
+                ]
+            },
+            "Week 38": {
+                "dates": [
+                    "14-09-2026",
+                    "15-09-2026",
+                    "16-09-2026",
+                    "17-09-2026",
+                    "18-09-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Multi-agent project",
+                        "tag": "GENAI"
+                    },
+                    {
+                        "name": "Behavioral patterns II",
+                        "tag": "SYSTEM"
+                    },
+                    {
+                        "name": "Grafana dashboards",
+                        "tag": "DEVOPS"
+                    }
+                ]
+            },
+            "Week 39": {
+                "dates": [
+                    "21-09-2026",
+                    "22-09-2026",
+                    "23-09-2026",
+                    "24-09-2026",
+                    "25-09-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Capstone planning",
+                        "tag": "GENAI"
+                    },
+                    {
+                        "name": "Concurrency",
+                        "tag": "SYSTEM"
+                    },
+                    {
+                        "name": "FinOps monitoring",
+                        "tag": "DEVOPS"
+                    }
+                ]
+            },
+            "Week 40": {
+                "dates": [
+                    "28-09-2026",
+                    "29-09-2026",
+                    "30-09-2026",
+                    "01-10-2026",
+                    "02-10-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Capstone build",
+                        "tag": "GENAI"
+                    },
+                    {
+                        "name": "Extensible systems",
+                        "tag": "SYSTEM"
+                    },
+                    {
+                        "name": "Drift detection",
+                        "tag": "DEVOPS"
+                    }
+                ]
+            }
+        }
+    },
+    "phase6": {
+        "Name": "Polish & Confidence",
+        "Content": {
+            "Week 41": {
+                "dates": [
+                    "05-10-2026",
+                    "06-10-2026",
+                    "07-10-2026",
+                    "08-10-2026",
+                    "09-10-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Capstone integration",
+                        "tag": "GENAI"
+                    },
+                    {
+                        "name": "Persistence & repositories",
+                        "tag": "SYSTEM"
+                    }
+                ]
+            },
+            "Week 42": {
+                "dates": [
+                    "12-10-2026",
+                    "13-10-2026",
+                    "14-10-2026",
+                    "15-10-2026",
+                    "16-10-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Capstone hardening",
+                        "tag": "GENAI"
+                    },
+                    {
+                        "name": "API error handling",
+                        "tag": "SYSTEM"
+                    }
+                ]
+            },
+            "Week 43": {
+                "dates": [
+                    "19-10-2026",
+                    "20-10-2026",
+                    "21-10-2026",
+                    "22-10-2026",
+                    "23-10-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Code review & refactoring",
+                        "tag": "SYSTEM"
+                    },
+                    {
+                        "name": "Revision (Arrays + Strings)",
+                        "tag": "DSA"
+                    }
+                ]
+            },
+            "Week 44": {
+                "dates": [
+                    "26-10-2026",
+                    "27-10-2026",
+                    "28-10-2026",
+                    "29-10-2026",
+                    "30-10-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "LLD mock interview",
+                        "tag": "SYSTEM"
+                    },
+                    {
+                        "name": "Revision (Trees + Graphs)",
+                        "tag": "DSA"
+                    }
+                ]
+            },
+            "Week 45": {
+                "dates": [
+                    "02-11-2026",
+                    "03-11-2026",
+                    "04-11-2026",
+                    "05-11-2026",
+                    "06-11-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Revision (DP + Greedy)",
+                        "tag": "DSA"
+                    }
+                ]
+            },
+            "Week 46": {
+                "dates": [
+                    "09-11-2026",
+                    "10-11-2026",
+                    "11-11-2026",
+                    "12-11-2026",
+                    "13-11-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Revision (Trie, DSU, Segment Tree)",
+                        "tag": "DSA"
+                    }
+                ]
+            },
+            "Week 47": {
+                "dates": [
+                    "16-11-2026",
+                    "17-11-2026",
+                    "18-11-2026",
+                    "19-11-2026",
+                    "20-11-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Full system design mock 1",
+                        "tag": "SYSTEM"
+                    }
+                ]
+            },
+            "Week 48": {
+                "dates": [
+                    "23-11-2026",
+                    "24-11-2026",
+                    "25-11-2026",
+                    "26-11-2026",
+                    "27-11-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Full system design mock 2",
+                        "tag": "SYSTEM"
+                    }
+                ]
+            },
+            "Week 49": {
+                "dates": [
+                    "30-11-2026",
+                    "01-12-2026",
+                    "02-12-2026",
+                    "03-12-2026",
+                    "04-12-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Showcase & documentation",
+                        "tag": "GENAI"
+                    }
+                ]
+            },
+            "Week 50": {
+                "dates": [
+                    "07-12-2026",
+                    "08-12-2026",
+                    "09-12-2026",
+                    "10-12-2026",
+                    "11-12-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Infra review & cleanup",
+                        "tag": "DEVOPS"
+                    }
+                ]
+            },
+            "Week 51": {
+                "dates": [
+                    "14-12-2026",
+                    "15-12-2026",
+                    "16-12-2026",
+                    "17-12-2026",
+                    "18-12-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Mixed mocks (DSA + SD + AI)",
+                        "tag": "Interview"
+                    }
+                ]
+            },
+            "Week 52": {
+                "dates": [
+                    "21-12-2026",
+                    "22-12-2026",
+                    "23-12-2026",
+                    "24-12-2026",
+                    "25-12-2026"
+                ],
+                "content": [
+                    {
+                        "name": "NeetCode 250 daily",
+                        "tag": "DSA"
+                    },
+                    {
+                        "name": "Buffer / rest / adjust / job targeting",
+                        "tag": "General"
+                    }
+                ]
+            }
+        }
+    }
+}

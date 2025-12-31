@@ -10,6 +10,7 @@ import Clipboard from "../widgets/Clipboard"
 import ContactManager from "../widgets/ContactManager"
 import BookmarkManager from "../widgets/BookmarkManager"
 import TimeTracker from "../widgets/TimeTracker"
+import RoadmapManager from "../widgets/notes/Roadmap"
 
 export const Route_Items = [
     { name: "Home", link: "/", element: <NewHome /> },
@@ -20,6 +21,7 @@ export const Route_Items = [
     { name: "Contacts", link: "/Contacts", element: <ContactManager /> },
     { name: "Bookmarks", link: "/Bookmarks", element: <BookmarkManager /> },
     { name: "TimeTracker", link: "/TimeTracker", element: <TimeTracker /> },
+    { name: "RoadmapManager", link: "/RoadmapManager", element: <RoadmapManager /> },
 
     { name: "OldHome", link: "/OldHome", element: <Home /> },
 ]
