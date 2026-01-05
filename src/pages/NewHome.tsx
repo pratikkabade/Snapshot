@@ -9,6 +9,7 @@ import TaskManager from "../widgets/tasks/TaskManager"
 import ContactManager from "../widgets/ContactManager"
 import BookmarkManager from "../widgets/BookmarkManager"
 import TimeTracker from "../widgets/TimeTracker"
+import RoadmapManager from "../widgets/notes/Roadmap"
 
 export const NewHome = () => {
     useEffect(() => {
@@ -48,6 +49,11 @@ export const NewHome = () => {
                 </div>
                 <div className="col-span-2 max-md:col-span-3">
                     <TimeTracker />
+                </div>
+            </div>
+            <div className="grid grid-cols-3 gap-4 px-10 max-md:px-2">
+                <div className="col-span-1 max-md:col-span-3">
+                    <RoadmapManager />
                 </div>
             </div>
         </section >

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { query, orderBy, onSnapshot, doc, updateDoc, setDoc, deleteDoc, where } from "firebase/firestore"
 import { auth, roadmapNotesCollectionRef, db } from '../../config/Firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import roadmapData from '../../data/Roadmap.json'
 
 interface ContentItem {
@@ -52,11 +52,29 @@ const formatDate = (dateString: string): string => {
     const [day, month, year] = dateString.split('-').map(Number)
     const date = new Date(year, month - 1, day)
     return new Intl.DateTimeFormat('en-US', {
-        weekday: 'long',
+        // weekday: 'long',
         month: 'short',
         day: 'numeric',
         year: 'numeric'
     }).format(date)
+}
+
+// Format date to human-readable format
+const formatWeekDay = (dateString: string): string => {
+    const [day, month, year] = dateString.split('-').map(Number)
+    const date = new Date(year, month - 1, day)
+    return new Intl.DateTimeFormat('en-US', {
+        weekday: 'long',
+    }).format(date)
+}
+
+// count dates difference from dec 31, 2025
+const dateDifferenceFrom2026 = (dateString: string): number => {
+    const [day, month, year] = dateString.split('-').map(Number)
+    const targetDate = new Date(year, month - 1, day)
+    const baseDate = new Date(2025, 11, 31) // December is 11
+    const diffTime = targetDate.getTime() - baseDate.getTime()
+    return Math.ceil(diffTime / (1000 * 60 * 60 * 24))
 }
 
 export function RoadmapNote({ date, weekContent, existingNote, onClose }: RoadmapNoteProps) {
@@ -169,15 +187,16 @@ export function RoadmapNote({ date, weekContent, existingNote, onClose }: Roadma
     }
 
     return (
-        <div className="bg-white rounded-xl shadow-md p-6 fade-in2">
-            <div className="flex justify-between items-center mb-4">
-                <h2 className="text-2xl font-bold text-gray-800">{formatDate(date)}</h2>
-                <button
+        <div className="bg-white border border-gray-100 rounded-xl shadow-md p-6 fade-in2">
+            <div className="flex flex-row items-center mb-4 gap-2">
+                <h2 className="text-2xl font-bold text-gray-800">{formatWeekDay(date)}</h2>
+                <h2 className="text-xl font-semibold text-gray-800">({formatDate(date)})</h2>
+                {/* <button
                     onClick={onClose}
                     className="text-gray-500 hover:text-gray-700 text-2xl"
                 >
                     <i className="fas fa-times"></i>
-                </button>
+                </button> */}
             </div>
 
             <div className="mb-6">
@@ -232,18 +251,18 @@ export function RoadmapNote({ date, weekContent, existingNote, onClose }: Roadma
                     )}
                 </div>
                 <div className="flex justify-end gap-3">
-                    <button
+                    {/* <button
                         onClick={onClose}
                         className="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition-colors"
                     >
                         Cancel
-                    </button>
+                    </button> */}
                     <button
                         onClick={handleSave}
                         disabled={!isDirty || loading}
                         className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50"
                     >
-                        {loading ? 'Saving...' : existingNote ? 'Update Note' : 'Save Note'}
+                        {loading ? 'Saving...' : existingNote ? 'Update' : 'Save'}
                     </button>
                 </div>
             </div>
@@ -353,6 +372,29 @@ function RoadmapManager() {
     const currentPhase = studyPlan[selectedPhase]
     const currentWeek = currentPhase?.Content[selectedWeek]
 
+    useEffect(() => {
+        if (NOTHomePage) {
+            document.title = `${currentPhase?.Name || ''} - ${selectedWeek}`
+        }
+    }, [selectedPhase, selectedWeek, NOTHomePage])
+
+
+    const renderHeader = () => {
+        return (
+            <div className="flex flex-row justify-center text-2xl text-stone-700 font-semibold text-center mt-2 mb-5">
+                {NOTHomePage ?
+                    <></>
+                    :
+                    <Link to={'/Roadmap'} className="p-2 px-4 rounded-full border-2 border-white hover:border-stone-300">
+                        <i className='fa-solid fa-road fa-lg mr-2'></i>
+                        Roadmap
+                    </Link>
+                }
+            </div>
+        )
+    }
+
+
     // Get note for specific date
     const getNoteForDate = (date: string) => {
         return notes.find(note => note.data.date === date)
@@ -384,13 +426,9 @@ function RoadmapManager() {
 
     return (
         <div className="flex flex-col justify-center items-center">
-            <div className={`p-4 ${NOTHomePage ? 'w-5/6' : 'w-full'}`}>
-                {/* Header */}
-                <div className="flex flex-row justify-between items-center mb-6">
-                    <h1 className="text-3xl font-bold text-slate-700">
-                        {currentPhase?.Name}
-                    </h1>
-                    {/* {NOTHomePage && (
+            <div className={`p-4 ${NOTHomePage ? 'w-11/12' : 'bg-white rounded-xl shadow-md w-full scrl h-72'}`}>
+                {renderHeader()}
+                {/* {NOTHomePage && (
                         <Link
                             to="/"
                             className="px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700"
@@ -398,34 +436,6 @@ function RoadmapManager() {
                             Back to Home
                         </Link>
                     )} */}
-                </div>
-
-                {/* Phase Selector */}
-                <div className="mb-4 flex flex-row gap-3">
-                    <select
-                        value={selectedPhase}
-                        onChange={(e) => setSelectedPhase(e.target.value)}
-                        className="px-4 py-2 border-2 border-slate-300 rounded-lg focus:outline-none focus:border-slate-500 w-72"
-                    >
-                        {Object.keys(studyPlan).map((phaseKey) => (
-                            <option key={phaseKey} value={phaseKey}>
-                                {studyPlan[phaseKey].Name}
-                            </option>
-                        ))}
-                    </select>
-
-                    <select
-                        value={selectedWeek}
-                        onChange={(e) => setSelectedWeek(e.target.value)}
-                        className="px-4 py-2 border-2 border-slate-300 rounded-lg focus:outline-none focus:border-slate-500 w-36"
-                    >
-                        {Object.keys(currentPhase?.Content || {}).map((weekKey) => (
-                            <option key={weekKey} value={weekKey} onClick={() => { setSelectedWeek(weekKey) }}>
-                                {currentPhase?.Content[weekKey] && weekKey}
-                            </option>
-                        ))}
-                    </select>
-                </div>
 
                 {/* OLD Week Selector <div className="flex flex-wrap gap-2 mb-6">
                     {Object.keys(currentPhase?.Content || {}).map((weekKey) => (
@@ -445,9 +455,57 @@ function RoadmapManager() {
                 </div> */}
 
                 {/* Days Selector - Horizontal */}
-                <div className="mb-6 bg-white rounded-xl shadow-md p-4">
-                    <h3 className="text-lg font-bold mb-3 text-slate-800">Days</h3>
+                <div className="mb-6 bg-white border border-gray-100 rounded-xl shadow-md p-4">
+                    {/* Header 
+                    <div className="flex flex-row justify-between items-center mb-6">
+                        <h1 className="text-3xl font-bold text-slate-700">
+                            {currentPhase?.Name}
+                        </h1>
+                    </div>
+                    */}
+
+                    {/* Phase Selector */}
+                    <div className="mb-4 flex flex-row gap-3 flex-wrap">
+                        <select
+                            value={selectedPhase}
+                            onChange={(e) => setSelectedPhase(e.target.value)}
+                            className="px-4 py-2 border-2 border-slate-300 rounded-lg focus:outline-none focus:border-slate-500 w-72 text-xl"
+                        >
+                            {Object.keys(studyPlan).map((phaseKey) => (
+                                <option key={phaseKey} value={phaseKey}>
+                                    {studyPlan[phaseKey].Name}
+                                </option>
+                            ))}
+                        </select>
+
+                        <select
+                            value={selectedWeek}
+                            onChange={(e) => setSelectedWeek(e.target.value)}
+                            className="px-4 py-2 border-2 border-slate-300 rounded-lg focus:outline-none focus:border-slate-500 w-36"
+                        >
+                            {Object.keys(currentPhase?.Content || {}).map((weekKey) => (
+                                <option key={weekKey} value={weekKey} onClick={() => { setSelectedWeek(weekKey) }}>
+                                    {currentPhase?.Content[weekKey] && weekKey}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+
                     <div className="flex gap-2 overflow-x-auto pb-2">
+                        {/* previous week */}
+                        <button
+                            onClick={() => {
+                                const weeks = Object.keys(currentPhase?.Content || {})
+                                const currentIndex = weeks.indexOf(selectedWeek)
+                                if (currentIndex > 0) {
+                                    setSelectedWeek(weeks[currentIndex - 1])
+                                }
+                            }}
+                            className="flex flex-col items-center justify-center p-4 text-sm font-medium rounded-lg bg-slate-100 text-primary-600 dark:bg-slate-800 dark:text-primary-500 hover:bg-slate-200"
+                        >
+                            <div className="font-semibold">⬅️</div>
+                        </button>
+
                         {currentWeek?.dates.map((date, idx) => {
                             const hasNote = getNoteForDate(date)
                             return (
@@ -455,60 +513,90 @@ function RoadmapManager() {
                                     key={idx}
                                     onClick={() => setSelectedDay(date)}
                                     aria-current={selectedDay === date ? "page" : undefined}
-                                    className={`flex flex-col items-center justify-center p-4 text-sm font-medium first:ml-0 rounded-t-lg bg-slate-100 text-primary-600 dark:bg-slate-800 dark:text-primary-500 border-b-4
+                                    className={`flex flex-col items-center justify-center p-4 text-sm font-medium first:ml-0 rounded-t-lg bg-slate-100 text-primary-600 dark:bg-slate-800 dark:text-primary-500 border-b-4 hover:bg-slate-200
                                          ${selectedDay === date
-                                            ? 'py-3 border-slate-600 bg-slate-100 text-slate-800'
-                                            : 'py-3 border-slate-100'
+                                            ? 'py-3 border-slate-600 bg-stone-200 text-slate-800 dark:bg-stone-800 dark:text-slate-200 font-bold'
+                                            : 'py-3 border-slate-100 hover:border-slate-400'
                                         }`}
                                 >
-                                    <div className="font-semibold flex flex-row justify-center items-center">
-                                        {hasNote ? <div>✅ Day {idx + 1}</div> : <div>Day {idx + 1}</div>}</div>
+                                    <div className="font-semibold flex flex-row justify-center items-center w-20">
+                                        {hasNote ?
+                                            <div>✅ Day {dateDifferenceFrom2026(date)}</div>
+                                            :
+                                            <div>Day {dateDifferenceFrom2026(date)}</div>}</div>
                                     <div className="text-xs">{formatDate(date)}</div>
                                 </button>
                             )
                         })}
+
+                        {/* next week */}
+                        <button
+                            onClick={() => {
+                                const weeks = Object.keys(currentPhase?.Content || {})
+                                const currentIndex = weeks.indexOf(selectedWeek)
+                                if (currentIndex < weeks.length - 1) {
+                                    setSelectedWeek(weeks[currentIndex + 1])
+                                }
+                            }}
+                            className="flex flex-col items-center justify-center p-4 text-sm font-medium rounded-lg bg-slate-100 text-primary-600 dark:bg-slate-800 dark:text-primary-500 hover:bg-slate-200"
+                        >
+                            <div className="font-semibold">➡️</div>
+                        </button>
                     </div>
                 </div>
 
                 {/* Content Section */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                     {/* Left: Week Topics */}
-                    <div className="lg:col-span-1 bg-white rounded-xl shadow-md p-4">
+                    <div className={`${NOTHomePage ? 'lg:col-span-1 bg-white border border-gray-100 rounded-xl shadow-md p-4' : 'hidden'}`}>
                         <h3 className="text-xl font-bold mb-4 text-gray-800">Week's Topics</h3>
                         <div className="space-y-2">
                             {currentWeek?.content.map((item, idx) => {
                                 const note = selectedDay ? getNoteForDate(selectedDay) : null
                                 const isCompleted = note?.data.completedTopics?.includes(item.name) || false
 
-                                return (
-                                    <div
-                                        key={idx}
-                                        className={`p-3 rounded-lg border-l-4 transition-all ${isCompleted
-                                            ? 'bg-green-50 border-green-500'
-                                            : 'bg-blue-50 border-blue-500'
-                                            }`}
-                                    >
-                                        <div className="flex items-start gap-2">
-                                            <div className="flex-1">
-                                                <div className="flex items-center justify-between">
-                                                    <div>
-                                                        <span className={`inline-block px-2 py-1 text-xs font-semibold rounded mb-2 ${isCompleted
-                                                            ? 'bg-green-200 text-green-800'
-                                                            : getTagClasses(item.tag)
-                                                            }`}>
-                                                            {item.tag}
-                                                        </span>
-                                                    </div>
-                                                    {isCompleted && (
-                                                        <div className="text-sm text-green-700 font-semibold">Done</div>
-                                                    )}
+                                const isNeet = item.name === 'NeetCode 250 daily'
+                                const baseClasses = `p-3 rounded-lg border-l-4 transition-all flex ${isCompleted
+                                    ? 'bg-green-50 border-green-500'
+                                    : 'bg-blue-50 border-blue-500'
+                                    }`
+
+                                const content = (
+                                    <div className="flex items-start gap-2 w-full">
+                                        <div className="flex-1 w-full">
+                                            <div className="flex items-center justify-between w-full">
+                                                <div>
+                                                    <span className={`inline-block px-2 py-1 text-xs font-semibold rounded mb-2 ${isCompleted
+                                                        ? 'bg-green-200 text-green-800'
+                                                        : getTagClasses(item.tag)
+                                                        }`}>
+                                                        {item.tag}
+                                                    </span>
                                                 </div>
-                                                <p className={`text-sm font-medium ${isCompleted ? 'line-through text-gray-500' : 'text-gray-800'
-                                                    }`}>
-                                                    {item.name}
-                                                </p>
+                                                {isCompleted && (
+                                                    <div className="text-sm text-green-700 font-semibold">Done</div>
+                                                )}
                                             </div>
+                                            <p className={`text-sm font-medium ${isCompleted ? 'line-through text-gray-500' : 'text-gray-800'
+                                                }`}>
+                                                {item.name}
+                                            </p>
                                         </div>
+                                    </div>
+                                )
+
+                                return isNeet ? (
+                                    <a
+                                        href={'https://neetcode.io/practice/practice/neetcode250'}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        key={idx}
+                                        className={`${baseClasses} cursor-pointer hover:brightness-95 hover:underline`}>
+                                        {content}
+                                    </a>
+                                ) : (
+                                    <div key={idx} className={`${baseClasses} cursor-default`}>
+                                        {content}
                                     </div>
                                 )
                             })}
@@ -516,7 +604,7 @@ function RoadmapManager() {
                     </div>
 
                     {/* Right: Day Note */}
-                    <div className="lg:col-span-2">
+                    <div className={`${!NOTHomePage ? 'lg:col-span-3' : 'lg:col-span-2'}`}>
                         {selectedDay ? (
                             <RoadmapNote
                                 date={selectedDay}
@@ -527,7 +615,7 @@ function RoadmapManager() {
                                 week={selectedWeek}
                             />
                         ) : (
-                            <div className="bg-white rounded-xl shadow-md p-8 h-full flex items-center justify-center">
+                            <div className="bg-white border border-gray-100 rounded-xl shadow-md p-8 h-full flex items-center justify-center">
                                 <div className="text-center text-gray-400">
                                     <i className="fas fa-calendar-day text-6xl mb-4"></i>
                                     <p className="text-xl">Select a day to view or add notes</p>

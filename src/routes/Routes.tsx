@@ -21,7 +21,7 @@ export const Route_Items = [
     { name: "Contacts", link: "/Contacts", element: <ContactManager /> },
     { name: "Bookmarks", link: "/Bookmarks", element: <BookmarkManager /> },
     { name: "TimeTracker", link: "/TimeTracker", element: <TimeTracker /> },
-    { name: "RoadmapManager", link: "/RoadmapManager", element: <RoadmapManager /> },
+    { name: "Roadmap", link: "/Roadmap", element: <RoadmapManager /> },
 
     { name: "OldHome", link: "/OldHome", element: <Home /> },
 ]
