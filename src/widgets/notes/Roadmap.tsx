@@ -366,6 +366,16 @@ function RoadmapManager() {
         }
     }, [selectedWeek, selectedPhase, selectedDay, studyPlan])
 
+    // Ensure today's date is selected if the resolved phase/week contains it.
+    // This runs after phase/week settle to avoid race conditions from multiple setState calls.
+    useEffect(() => {
+        const currentPhase = studyPlan[selectedPhase]
+        const currentWeek = currentPhase?.Content[selectedWeek]
+        if (currentWeek && currentWeek.dates && formattedToday && currentWeek.dates.includes(formattedToday)) {
+            setSelectedDay(formattedToday)
+        }
+    }, [formattedToday, selectedPhase, selectedWeek, studyPlan])
+
     const location = useLocation()
     const NOTHomePage = !["/"].includes(location.pathname)
 
@@ -513,10 +523,10 @@ function RoadmapManager() {
                                     key={idx}
                                     onClick={() => setSelectedDay(date)}
                                     aria-current={selectedDay === date ? "page" : undefined}
-                                    className={`flex flex-col items-center justify-center p-4 text-sm font-medium first:ml-0 rounded-t-lg bg-slate-100 text-primary-600 dark:bg-slate-800 dark:text-primary-500 border-b-4 hover:bg-slate-200
+                                    className={`flex flex-col items-center justify-center p-4 text-sm font-medium first:ml-0 rounded-t-lg bg-slate-100 text-primary-600 dark:bg-slate-800 dark:text-primary-500 border-b-4
                                          ${selectedDay === date
-                                            ? 'py-3 border-slate-600 bg-stone-200 text-slate-800 dark:bg-stone-800 dark:text-slate-200 font-bold'
-                                            : 'py-3 border-slate-100 hover:border-slate-400'
+                                            ? 'py-2 border-slate-600 bg-slate-200 text-slate-800 dark:bg-slate-800 dark:text-slate-200 font-bold hover:bg-slate-300 hover:border-slate-900 dark:hover:border-slate-100'
+                                            : 'py-2 border-slate-100 hover:border-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800'
                                         }`}
                                 >
                                     <div className="font-semibold flex flex-row justify-center items-center w-20">
