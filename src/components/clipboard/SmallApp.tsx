@@ -36,11 +36,11 @@ export const renderItems = ({
                 const isSelected = item.id === itemSelected;
                 const isExpanded = expandedId === item.id;
                 return (
-                    <li key={item.id} className={`p-3 bg-gray-50 dark:bg-gray-700 my-2 rounded-xl bg-white/80 backdrop-blur-md text- border border-gray-200 dark:border-gray-600 duration-200 hover:shadow-md transition-shadow max-w-96 w-full h-fit group ${isSelected
-                        ? "bg-green-200 dark:bg-green-800 border-green-400 dark:border-green-600 hover:border-green-500 text-green-600 dark:text-green-200"
+                    <li key={item.id} className={`p-3 bg-gray-50 dark:bg-gray-700 my-2 rounded-xl bg-white/80 backdrop-blur-md text- border border-gray-200 dark:border-gray-600 duration-200 shadow-[0_4px_10px_rgba(0,0,0,0.08)] hover:shadow-[0_2px_5px_rgba(0,0,0,0.08)] transition-shadow max-w-96 w-full h-fit group active:scale-[0.97] ${isSelected
+                        ? "bg-green-100 dark:bg-green-800 border-green-400 dark:border-green-600 hover:border-green-500 text-green-800 dark:text-green-200"
                         : "border-gray-200 dark:border-gray-600 text-gray-700 dark:text-white"
                         }`}>
-                        <div onClick={() => copyItem(item)} className={`whitespace-pre-wrap break-words p-1 rounded-xl text-sm hover:text-green-500 dark:hover:text-green-400 cursor-pointer`}>
+                        <div onClick={() => copyItem(item)} className={`whitespace-pre-wrap break-words p-1 rounded-xl text-sm hover:text-green-800 dark:hover:text-green-200 cursor-pointer`}>
                             {isExpanded ? (
                                 <div className="max-h-28 overflow-y-auto pr-2 break-words">
                                     {item.content}
@@ -78,9 +78,10 @@ export const renderItems = ({
                                 {formatDate(item.created!)}
                             </span>
                             <div className="flex flex-row gap-2">
-                                <div onClick={() => copyItem(item)} className={`hidden group-hover:flex border rounded-full px-2 flex-row items-center text-lg cursor-pointer ${isSelected ? 'bg-green-200 dark:bg-green-600 border-green-400 dark:border-green-600 hover:brightness-105' : 'bg-green-100 dark:bg-green-800 border-green-200 dark:border-green-800 hover:bg-green-100 dark:hover:bg-green-700 hover:border-green-300 dark:hover:border-green-600'}`}>
-                                    {isSelected ? <HiOutlineCheck className="fade-in text-green-700 dark:text-green-300 hidden group-hover:block" /> :
-                                        <HiOutlineDocumentDuplicate className="fade-in text-green-500 dark:text-green-200 hidden group-hover:block" />}
+                                <div onClick={() => copyItem(item)} className={`flex border rounded-full px-2 flex-row items-center text-lg cursor-pointer ${isSelected ? 'bg-green-200 dark:bg-green-600 border-green-400 dark:border-green-600 hover:brightness-105' : 'bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-600'}`}>
+                                    {isSelected ?
+                                        <HiOutlineCheck className="fade-in text-green-700 dark:text-green-300" /> :
+                                        <HiOutlineDocumentDuplicate className="fade-in text-slate-500 dark:text-slate-200" />}
                                 </div>
                                 <Button
                                     size="xs"
