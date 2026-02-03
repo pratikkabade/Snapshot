@@ -9,10 +9,6 @@
                 ],
                 "content": [
                     {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
-                    {
                         "name": "Algorithm Analysis, Math, Bit Magic",
                         "tag": "DSA"
                     },
@@ -35,10 +31,6 @@
                     "09-01-2026"
                 ],
                 "content": [
-                    {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
                     {
                         "name": "Recursion",
                         "tag": "DSA"
@@ -63,10 +55,6 @@
                 ],
                 "content": [
                     {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
-                    {
                         "name": "Arrays",
                         "tag": "DSA"
                     },
@@ -89,10 +77,6 @@
                     "23-01-2026"
                 ],
                 "content": [
-                    {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
                     {
                         "name": "Searching (Binary Search)",
                         "tag": "DSA"
@@ -117,10 +101,6 @@
                 ],
                 "content": [
                     {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
-                    {
                         "name": "Sorting",
                         "tag": "DSA"
                     },
@@ -143,10 +123,6 @@
                     "06-02-2026"
                 ],
                 "content": [
-                    {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
                     {
                         "name": "Hashing",
                         "tag": "DSA"
@@ -171,10 +147,6 @@
                 ],
                 "content": [
                     {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
-                    {
                         "name": "Strings",
                         "tag": "DSA"
                     },
@@ -197,10 +169,6 @@
                     "20-02-2026"
                 ],
                 "content": [
-                    {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
                     {
                         "name": "Linked Lists",
                         "tag": "DSA"
@@ -230,10 +198,6 @@
                 ],
                 "content": [
                     {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
-                    {
                         "name": "Stack",
                         "tag": "DSA"
                     },
@@ -256,10 +220,6 @@
                     "06-03-2026"
                 ],
                 "content": [
-                    {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
                     {
                         "name": "Queue",
                         "tag": "DSA"
@@ -284,10 +244,6 @@
                 ],
                 "content": [
                     {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
-                    {
                         "name": "Deque",
                         "tag": "DSA"
                     },
@@ -310,10 +266,6 @@
                     "20-03-2026"
                 ],
                 "content": [
-                    {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
                     {
                         "name": "Trees (Traversal)",
                         "tag": "DSA"
@@ -338,10 +290,6 @@
                 ],
                 "content": [
                     {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
-                    {
                         "name": "Trees (Advanced problems)",
                         "tag": "DSA"
                     },
@@ -364,10 +312,6 @@
                     "03-04-2026"
                 ],
                 "content": [
-                    {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
                     {
                         "name": "BST",
                         "tag": "DSA"
@@ -392,10 +336,6 @@
                 ],
                 "content": [
                     {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
-                    {
                         "name": "Heap",
                         "tag": "DSA"
                     },
@@ -418,10 +358,6 @@
                     "17-04-2026"
                 ],
                 "content": [
-                    {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
                     {
                         "name": "Graphs (BFS, DFS)",
                         "tag": "DSA"
@@ -451,10 +387,6 @@
                 ],
                 "content": [
                     {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
-                    {
                         "name": "Graphs (Dijkstra, Prim)",
                         "tag": "DSA"
                     },
@@ -477,10 +409,6 @@
                     "01-05-2026"
                 ],
                 "content": [
-                    {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
                     {
                         "name": "Graphs (Kosaraju)",
                         "tag": "DSA"
@@ -505,10 +433,6 @@
                 ],
                 "content": [
                     {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
-                    {
                         "name": "Greedy algorithms",
                         "tag": "DSA"
                     },
@@ -531,10 +455,6 @@
                     "15-05-2026"
                 ],
                 "content": [
-                    {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
                     {
                         "name": "Backtracking",
                         "tag": "DSA"
@@ -559,10 +479,6 @@
                 ],
                 "content": [
                     {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
-                    {
                         "name": "Dynamic Programming (Intro)",
                         "tag": "DSA"
                     },
@@ -585,10 +501,6 @@
                     "29-05-2026"
                 ],
                 "content": [
-                    {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
                     {
                         "name": "DP (Advanced problems)",
                         "tag": "DSA"
@@ -613,10 +525,6 @@
                 ],
                 "content": [
                     {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
-                    {
                         "name": "Trie",
                         "tag": "DSA"
                     },
@@ -639,10 +547,6 @@
                     "12-06-2026"
                 ],
                 "content": [
-                    {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
                     {
                         "name": "Segment Tree",
                         "tag": "DSA"
@@ -672,10 +576,6 @@
                 ],
                 "content": [
                     {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
-                    {
                         "name": "Binary Indexed Tree",
                         "tag": "DSA"
                     },
@@ -698,10 +598,6 @@
                     "26-06-2026"
                 ],
                 "content": [
-                    {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
                     {
                         "name": "Disjoint Set",
                         "tag": "DSA"
@@ -726,10 +622,6 @@
                 ],
                 "content": [
                     {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
-                    {
                         "name": "Kubernetes rollouts & probes",
                         "tag": "DEVOPS"
                     },
@@ -752,10 +644,6 @@
                     "10-07-2026"
                 ],
                 "content": [
-                    {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
                     {
                         "name": "EKS fundamentals",
                         "tag": "DEVOPS"
@@ -780,10 +668,6 @@
                 ],
                 "content": [
                     {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
-                    {
                         "name": "HPA & resilience",
                         "tag": "DEVOPS"
                     },
@@ -806,10 +690,6 @@
                     "24-07-2026"
                 ],
                 "content": [
-                    {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
                     {
                         "name": "Ingress & Helm",
                         "tag": "DEVOPS"
@@ -834,10 +714,6 @@
                 ],
                 "content": [
                     {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
-                    {
                         "name": "RBAC & service accounts",
                         "tag": "DEVOPS"
                     },
@@ -860,10 +736,6 @@
                     "07-08-2026"
                 ],
                 "content": [
-                    {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
                     {
                         "name": "Istio basics",
                         "tag": "DEVOPS"
@@ -893,10 +765,6 @@
                 ],
                 "content": [
                     {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
-                    {
                         "name": "Agentic AI concepts",
                         "tag": "GENAI"
                     },
@@ -919,10 +787,6 @@
                     "21-08-2026"
                 ],
                 "content": [
-                    {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
                     {
                         "name": "CrewAI",
                         "tag": "GENAI"
@@ -947,10 +811,6 @@
                 ],
                 "content": [
                     {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
-                    {
                         "name": "Guardrails & safety",
                         "tag": "GENAI"
                     },
@@ -973,10 +833,6 @@
                     "04-09-2026"
                 ],
                 "content": [
-                    {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
                     {
                         "name": "Evaluation strategies",
                         "tag": "GENAI"
@@ -1001,10 +857,6 @@
                 ],
                 "content": [
                     {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
-                    {
                         "name": "Creative AI project",
                         "tag": "GENAI"
                     },
@@ -1027,10 +879,6 @@
                     "18-09-2026"
                 ],
                 "content": [
-                    {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
                     {
                         "name": "Multi-agent project",
                         "tag": "GENAI"
@@ -1055,10 +903,6 @@
                 ],
                 "content": [
                     {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
-                    {
                         "name": "Capstone planning",
                         "tag": "GENAI"
                     },
@@ -1081,10 +925,6 @@
                     "02-10-2026"
                 ],
                 "content": [
-                    {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
                     {
                         "name": "Capstone build",
                         "tag": "GENAI"
@@ -1114,10 +954,6 @@
                 ],
                 "content": [
                     {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
-                    {
                         "name": "Capstone integration",
                         "tag": "GENAI"
                     },
@@ -1136,10 +972,6 @@
                     "16-10-2026"
                 ],
                 "content": [
-                    {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
                     {
                         "name": "Capstone hardening",
                         "tag": "GENAI"
@@ -1160,10 +992,6 @@
                 ],
                 "content": [
                     {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
-                    {
                         "name": "Code review & refactoring",
                         "tag": "SYSTEM"
                     },
@@ -1182,10 +1010,6 @@
                     "30-10-2026"
                 ],
                 "content": [
-                    {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
                     {
                         "name": "LLD mock interview",
                         "tag": "SYSTEM"
@@ -1206,10 +1030,6 @@
                 ],
                 "content": [
                     {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
-                    {
                         "name": "Revision (DP + Greedy)",
                         "tag": "DSA"
                     }
@@ -1224,10 +1044,6 @@
                     "13-11-2026"
                 ],
                 "content": [
-                    {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
                     {
                         "name": "Revision (Trie, DSU, Segment Tree)",
                         "tag": "DSA"
@@ -1244,10 +1060,6 @@
                 ],
                 "content": [
                     {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
-                    {
                         "name": "Full system design mock 1",
                         "tag": "SYSTEM"
                     }
@@ -1262,10 +1074,6 @@
                     "27-11-2026"
                 ],
                 "content": [
-                    {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
                     {
                         "name": "Full system design mock 2",
                         "tag": "SYSTEM"
@@ -1282,10 +1090,6 @@
                 ],
                 "content": [
                     {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
-                    {
                         "name": "Showcase & documentation",
                         "tag": "GENAI"
                     }
@@ -1300,10 +1104,6 @@
                     "11-12-2026"
                 ],
                 "content": [
-                    {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
                     {
                         "name": "Infra review & cleanup",
                         "tag": "DEVOPS"
@@ -1320,10 +1120,6 @@
                 ],
                 "content": [
                     {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
-                    {
                         "name": "Mixed mocks (DSA + SD + AI)",
                         "tag": "Interview"
                     }
@@ -1338,10 +1134,6 @@
                     "25-12-2026"
                 ],
                 "content": [
-                    {
-                        "name": "NeetCode 250 daily",
-                        "tag": "DSA"
-                    },
                     {
                         "name": "Buffer / rest / adjust / job targeting",
                         "tag": "General"

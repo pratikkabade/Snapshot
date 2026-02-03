@@ -43,7 +43,7 @@ const InnerRoutes = () => {
     const NOTHomePage = !["/"].includes(location.pathname);
 
     return (
-        <div className="dark:bg-gray-900">
+        <div className="">
             {NOTHomePage && (
                 <div className="mb-10">
                     {/* Navbar component */}
