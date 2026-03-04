@@ -105,7 +105,7 @@ const Clipboard: React.FC = () => {
     const copyItem = (item: ClipboardItem) => {
         setItemSelected(item.id);
         navigator.clipboard.writeText(item.content)
-            .then(() => showMessage('Copied to clipboard!', 'success'))
+            .then(() => showMessage('Copied!', 'success'))
             .catch(err => showMessage(`Failed to copy: ${err instanceof Error ? err.message : String(err)}`, 'failure'));
         setTimeout(() => {
             setItemSelected('');
@@ -136,7 +136,7 @@ const Clipboard: React.FC = () => {
             {NOTHomePage ?
                 <></>
                 :
-                <Link to={'/Clipboard'} className="p-2 px-4 rounded-full border-2 border-white hover:border-slate-300 dark:border-gray-900 dark:hover:border-slate-600 dark:text-white">
+                <Link to={'/Clipboard'} className="p-2 px-4 rounded-full border-2 border-white hover:border-slate-300">
                     <i className='fa-solid fa-clipboard mr-3'></i>
                     Clipboard ({clipboardItems.length})
                 </Link>
@@ -181,7 +181,7 @@ const Clipboard: React.FC = () => {
 
     if (NOTHomePage) return (
         <div className="flex flex-col justify-center items-center">
-            <div className={`p-2 w-11/12 dark:bg-gray-900`}>
+            <div className={`p-2 w-11/12`}>
                 {renderHeader()}
                 <div>
                     {loading ? <h3 className="text-xl text-center font-bold animate-pulse">Loading..</h3> :
@@ -204,7 +204,7 @@ const Clipboard: React.FC = () => {
 
     return (
         <div className="flex flex-col justify-center items-center">
-            <div className={`bg-white dark:bg-gray-900 rounded-xl shadow-md p-2 w-full`}>
+            <div className={`bg-white rounded-xl shadow-md p-2 w-full`}>
                 {renderHeader()}
                 <div className='scrl h-72'>
                     {loading ? <h3 className="scrl h-72 text-xl text-center font-bold animate-pulse">Loading..</h3> :
